@@ -25,7 +25,7 @@ Fun facts:
 
 Build a `Pet` class that fulfills these deliverables:
 - each instance should start with a `name` and `species`
-- you should be able to a pet instance's `name`
+- you should be able to change a pet instance's `name`
 - you should not be able to change a pet instance's `species`
 - the Pet class has the `all` class variable that tracks every instance of Pet - it starts as an empty array
 - every Pet instance gets added to the `all` class array when they're created
