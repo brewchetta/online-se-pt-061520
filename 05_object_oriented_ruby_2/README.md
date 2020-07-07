@@ -1,4 +1,4 @@
-# Object Oriented Programming Part 1
+# Object Oriented Programming Part 2
 
 ### SWBATs
 - Know how to use macros to create instance methods
@@ -24,9 +24,10 @@ Fun facts:
 ### Coding Exercise
 
 Build a `Pet` class that fulfills these deliverables:
-- each instance should start with a `name` and `nickname`
-- `name` cannot be changed but `nickname` can be changed
-- Pet has the `all` class variable that tracks every instance of Pet - it starts as an empty array
+- each instance should start with a `name` and `species`
+- you should be able to a pet instance's `name`
+- you should not be able to change a pet instance's `species`
+- the Pet class has the `all` class variable that tracks every instance of Pet - it starts as an empty array
 - every Pet instance gets added to the `all` class array when they're created
 - Pet has a `.all` method which returns an array of every Pet instance
 - Pet has a `.find_by_name` method which returns the first *instance* of a pet with a matching name
