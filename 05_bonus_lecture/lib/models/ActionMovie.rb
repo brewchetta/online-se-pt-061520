@@ -5,12 +5,12 @@ class ActionMovie
   def initialize(title, number_of_explosions)
     @title = title
     @number_of_explosions = number_of_explosions
+
+    Movie.all << self
   end
 
-  @@all = []
-
   def self.all
-    @@all
+    Move.all
   end
 
 end
