@@ -1,5 +1,0 @@
-# To install our gems, we need to run 'bundle install'
-
-gem "pry"
-
-gem "colorize"
