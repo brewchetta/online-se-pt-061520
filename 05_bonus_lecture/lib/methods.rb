@@ -1,4 +1,4 @@
-class Methods
+module Methods
 
   def self.rainbow(string_arg)
 
@@ -13,6 +13,6 @@ class Methods
 
     new_string
 
-  end
+  end # rainbow
 
 end
