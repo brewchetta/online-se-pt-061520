@@ -1,16 +1,19 @@
 class ActionMovie
 
-  attr_reader :title, number_of_explosions
+  attr_reader :title, :rating, :number_of_explosions
 
-  def initialize(title, number_of_explosions)
+  def initialize(title, rating, number_of_explosions)
     @title = title
+    @rating = rating
     @number_of_explosions = number_of_explosions
 
-    Movie.all << self
+    self.all << self
   end
 
+  @@all = []
+
   def self.all
-    Move.all
+    self.all
   end
 
 end
