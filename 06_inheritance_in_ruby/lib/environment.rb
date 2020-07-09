@@ -1,7 +1,10 @@
 # Gems
 require "pry"
 require "colorize"
-require_relative "./color_module.rb"
+
+# Modules
+require_relative "./modules/Color.rb"
+require_relative "./modules/Activities.rb"
 
 # Classes
 require_relative "./models/Animal.rb"

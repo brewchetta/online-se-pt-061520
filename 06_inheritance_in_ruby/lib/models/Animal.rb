@@ -1,9 +1,10 @@
 class Animal
 
-  attr_reader :name
+  attr_reader :name, :catchphrase
 
-  def initialize(name)
+  def initialize(name, catchphrase)
     @name = name
+    @catchphrase = catchphrase
 
     @@all << self
   end

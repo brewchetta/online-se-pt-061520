@@ -1,9 +1,10 @@
-class Mammal
+class Animal
 
-  attr_reader :name
+  attr_reader :name, :catchphrase
 
-  def initialize(name)
+  def initialize(name, catchphrase)
     @name = name
+    @catchphrase = catchphrase
 
     @@all << self
   end
@@ -19,7 +20,7 @@ class Mammal
   end
 
   def shed_hair
-    puts "Now there's fur all over your furniture"
+    puts "Now you have hair all over your couch"
   end
 
 end
