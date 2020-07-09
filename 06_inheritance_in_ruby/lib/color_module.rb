@@ -1,4 +1,4 @@
-module Methods
+module Color
 
   @colors = [:red, :yellow, :green, :cyan, :blue, :magenta]
 
