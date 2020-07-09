@@ -2,7 +2,7 @@ module Color
 
   @colors = [:red, :yellow, :green, :cyan, :blue, :magenta]
 
-  def self.rainbow(string_arg)
+  def self.Rainbow(string_arg)
     new_string = ""
     i = 0
 

@@ -1,4 +1,4 @@
-class Animal
+class Mammal
 
   attr_reader :name, :catchphrase
 

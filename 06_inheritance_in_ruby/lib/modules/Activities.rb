@@ -2,9 +2,9 @@ module Activities
 
   def cook_food
     if @name == "Swedish Chef"
-      puts "Bork Bork Bork"
+      puts Color::Rainbow("Børk-børk-børk!")
     else
-      puts "I'm making something tasty!"
+      puts Color::Rainbow("I'm making something tasty!")
     end
   end
 
