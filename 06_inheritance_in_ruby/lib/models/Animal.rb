@@ -15,8 +15,10 @@ class Animal
     @@all
   end
 
-  def eat
-    puts "Nom nom"
+  def eat(food)
+    puts "Nom nom #{food}"
   end
 
 end
+
+# DRY --> DONT REPEAT YOURSELF
