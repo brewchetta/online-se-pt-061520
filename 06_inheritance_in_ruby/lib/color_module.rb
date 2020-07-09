@@ -12,7 +12,6 @@ module Color
     end
 
     new_string
-
   end # rainbow
 
 end
