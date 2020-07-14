@@ -1,0 +1,9 @@
+# To install our gems, we need to run 'bundle install'
+
+# Source tells us where to get the gems from
+
+source 'https://rubygems.org'
+
+gem "pry"
+
+gem "colorize"
