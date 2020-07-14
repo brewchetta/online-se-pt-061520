@@ -14,9 +14,9 @@ module Color
     new_string
   end # rainbow
 
-  def self.RainbowClear(string_arg)
+  def self.RainbowClear(string_arg, timeout = 1)
     puts self.Rainbow(string_arg)
-    sleep(1.5)
+    sleep(timeout)
     system("clear")
   end # rainbow clear
 
