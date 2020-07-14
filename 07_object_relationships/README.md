@@ -1,24 +1,54 @@
 # Ruby Class Inheritance
 
 ### SWBATs
-- Know that the acronym DRY stands for DONT REPEAT YOURSELF and understand how that applies to code
-- Understand how to architect their files with a run file and an environment file
-- Understand how to view the ancestors chain for a class
-- Know how to make a class inherit from a parent class
-- Know how to overwrite a parent class's methods
-- Recognize and utilize the `super` keyword
-- Understand what a module is and how to integrate it into a class with `include` and `extend`
-
-### Notes
-- Inheritance is super common and we'll come across it later with javascript as well!
+- Understand how to build a has_many belongs_to relationship between two classes
+- Map the relationship between classes in a domain
+- Recognize where the single source of truth goes for object relationships
+- Understand how to build a has_many through relationship
+- Recognize common patterns with join classes
 
 ### Coding Exercise
 Build out the following:
-- A `Cat` class that will act as the parent for two other classes
-- `Cat` has a `name`
-- `Cat` has a method `#purr` which prints `"Prrrrrrr"`
-- A module called `Roar` which has a method called `#roar` that prints `"RAAAAAR"`
-- A `Tiger` and a `Lion` class which both inherit from `Cat`
-- `Tiger` has `number_of_stripes` which should be an integer
-- `Lion` has `in_pride` which should be a boolean
-- `Tiger` and `Lion` instances inherit the `#roar` method from `Roar`
+- A `CatLady` class with a name attribute
+- A `Cat` class with a name attribute
+- An instance of a `Cat` belongs to a `CatLady`
+- An instance of `CatLady` has many instances of `Cat`
+- `cat1.catlady` should return the instance of cat lady the cat belongs to
+- `cat_lady1.cats` should return every instance of `Cat` that belongs to a cat lady
+
+Starter code:
+
+```
+class Cat
+  attr_accessor :name
+  @@all = []
+
+  def initialize(name:)
+    @name = name
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
+
+end
+
+class CatLady
+  attr_accessor :name
+  @@all = []
+
+  def initialize(name:)
+    @name = name
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
+
+end
+
+Cat.new(name: "Garfield")
+CatLady.new(name: "Josephine")
+```
