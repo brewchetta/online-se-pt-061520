@@ -14,4 +14,10 @@ module Color
     new_string
   end # rainbow
 
+  def self.RainbowClear(string_arg)
+    puts self.Rainbow(string_arg)
+    sleep(1.5)
+    system("clear")
+  end # rainbow clear
+
 end
