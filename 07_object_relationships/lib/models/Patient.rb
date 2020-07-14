@@ -1,12 +1,11 @@
-class Kid
+class Patient
 
-  attr_accessor :name, :age
+  attr_accessor :name
 
   @@all = []
 
-  def initialize(name:, age:)
+  def initialize(name:)
     @name = name
-    @age = age
 
     @@all << self
   end
