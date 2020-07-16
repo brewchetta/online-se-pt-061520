@@ -1,0 +1,18 @@
+#!/usr/bin/ruby -W0
+
+require_relative "../config/environment.rb"
+
+APIService.cat_fact_request
+puts CatFact.random_fact.colorize(:yellow)
+
+puts "\n"
+
+print "What artist would you like lyrics for? "
+artist_input = gets.chomp.downcase
+
+print "What song for #{artist_input} would you like to see? "
+song_input = gets.chomp.downcase
+
+APIService.lyric_request(artist_input, song_input)
+
+puts Color::Rainbow("Goodbye!")
