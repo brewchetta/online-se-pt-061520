@@ -1,3 +1,27 @@
 #!/usr/bin/ruby -W0
+# ^ this is a shebang and tells our terminal to use ruby when this file gets run
 
 require_relative "../config/environment.rb"
+
+# we have all our methods for requests/responses contained in this APIService class
+api = APIService.new
+
+cat_fact = api.fetch_cat_fact
+
+puts cat_fact.colorize(:yellow)
+
+puts "\n"
+
+print "What artist? "
+artist_input = gets.chomp
+print "What song? "
+song_input = gets.chomp
+
+lyrics = api.fetch_lyrics(artist_input, song_input)
+
+lyrics.split("\n").each do |l|
+  puts l
+  sleep(0.2)
+end
+
+puts lyrics

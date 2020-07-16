@@ -11,5 +11,4 @@
 ### Links
 
 - Some Public APIs: https://github.com/public-apis/public-apis
-
-### Coding Exercise
+- If you plan on doing a lot of request/response work, look into postman: https://www.postman.com/
