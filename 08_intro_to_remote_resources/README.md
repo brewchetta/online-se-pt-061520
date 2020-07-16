@@ -6,6 +6,10 @@
   - Begin to understand the different http response codes
   - Know what an API and an endpoint is
   - Understand how to utilize RestClient
-  - Create a begin & rescue statement for error handling
+  - Know how to create error handling for bad requests
+
+### Links
+
+- Some Public APIs: https://github.com/public-apis/public-apis
 
 ### Coding Exercise
