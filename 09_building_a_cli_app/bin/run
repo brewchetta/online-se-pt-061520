@@ -1,0 +1,5 @@
+#!/usr/bin/ruby -W0
+
+require_relative "../config/environment.rb"
+
+CLI.new.run
