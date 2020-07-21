@@ -17,9 +17,9 @@ class APIService
   def fetch_character_page(page)
     uri = URI(BASE_URI + "?page=#{page}")
     characters = make_request(uri)
-    characters.map do |character_data|
+    character_instances = characters.map do |character_data|
       Character.new(character_data)
-    end
+    end    
   end
 
   # secondary method to make and return the request
