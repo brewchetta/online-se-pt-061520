@@ -5,12 +5,7 @@ require "uri"
 require "net/http"
 require "json"
 
-# Modules
-require_relative "../lib/modules/Color.rb"
-
 # Classes
-require_relative "../lib/models/Song.rb"
+require_relative "../lib/models/Character.rb"
 require_relative "../lib/services/APIService.rb"
-require_relative "../lib/services/cli.rb"
-
-puts Color::Rainbow("Loaded environment")
+require_relative "../lib/CLI.rb"
