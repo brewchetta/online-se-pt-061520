@@ -1,4 +1,4 @@
-# Ruby Class Inheritance
+# Building A CLI
 
 ### SWBATs
   - Know what JSON is
