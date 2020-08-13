@@ -19,7 +19,7 @@ class APIService
     characters = make_request(uri)
     character_instances = characters.map do |character_data|
       Character.new(character_data)
-    end    
+    end
   end
 
   # secondary method to make and return the request
