@@ -1,4 +1,4 @@
-# Ruby Class Inheritance
+# Intro to Remote Resources
 
 ### SWBATs
   - Know what JSON is

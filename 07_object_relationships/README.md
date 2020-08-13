@@ -1,4 +1,4 @@
-# Ruby Class Inheritance
+# Ruby Object Relationships
 
 ### SWBATs
 - Understand how to build a has_many belongs_to relationship between two classes
