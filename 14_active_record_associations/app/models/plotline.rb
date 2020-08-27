@@ -1,2 +1,3 @@
-class Plotline < ActiveRecord::Base  
+class Plotline < ActiveRecord::Base
+  
 end
