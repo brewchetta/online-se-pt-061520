@@ -1,0 +1,18 @@
+require_relative "config/environment"
+require 'standalone_migrations'
+StandaloneMigrations::Tasks.load_tasks
+
+desc "Says it's me again"
+task :hello do
+  puts "It's me again"
+end
+
+desc "Starts the console"
+task :console do
+  Pry.start
+end
+
+desc "Runs our program"
+task :run do
+  system("bin/run")
+end
