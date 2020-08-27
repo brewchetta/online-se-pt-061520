@@ -9,3 +9,5 @@ gem "rake"
 gem "standalone_migrations"
 
 gem "activerecord"
+
+gem "require_all"

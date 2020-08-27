@@ -1,7 +1,8 @@
-# first let's unseed the former heroes
+# first let's wipe the former entries
+Hero.destroy_all
 Hero.destroy_all
 
-# then let's create a few heroes
+# here are a few heroes
 justice_league = [
   { name: "Batman", secret_identity: "Bruce Wayne", power: "Really rich" },
   { name: "Superman", secret_identity: "Clark Kent", power: "Basically everything" },
