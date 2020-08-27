@@ -1,49 +1,39 @@
 # Intro to Active Record
 
-## Rake
+## Getting Started
 
-In order to hook up active record we first need access to `rake`.
+Clone down this repository, `cd` into the proper directory, and then run `bundle install` and `rake db:migrate`.
 
-We can add rake with `gem "rake"` in our `Gemfile`. You can also install rake globally with `gem install rake`. Once rake is installed, we need to include a `Rakefile` which will have all of our tasks.
+I'd recommend drawing out a diagram to represent the object relationships so you won't have to go back and change your foreign keys.
 
-The way to define a rake task is:
+## Building Migrations
+
+You'll need to build migrations for Villain, City, and Nemesis. When building the tables, make sure you check the pluralization for City and Nemesis since naming the table wrong will break it.
+
+Villain needs these columns: `name`, `power`, `desire`
+
+City needs these columns: `name`, `safety_rating`
+
+Nemesis only keeps track of which heroes and villains are rivals with each other. You won't need any columns besides foreign keys.
+
+In order to build out the relationships, you'll need to figure out which models need foreign keys as well! Remember where the source of truth lies!
+
+## Adding Macros
+
+Finally, you'll need to add macros to your models. The macros you'll use are:
 
 ```
-task :do_something do
-  puts "I am doing something!"
-end
+has_many
+belongs_to
+has_many , through:
 ```
 
-You can also add descriptions with the `desc` method. Remember that a rake task is still just running ruby!
-
-## Migrations
-
-To make migrations work, we'll start out utilizing a gem called `standalone_migrations`. The gem gets dropped into our `Gemfile` just like rake, but we also have to do a few configurations outlined in the gem's documentation on github (always read the documentation!). This gem allows us to build out our migrations for our database.
-
-A migration is effectively a reusable SQL query that allows us to predictably change the database. Once we've added the necessary lines to our `Rakefile` and constructed `db/config.yml`, we can create our first migration with `rake db:new_migration name=create_heros`.
-
-As an aside, we're naming the table `heros` instead of `heroes` because ActiveRecord will automatically try and pluralize the `Hero` model and look for a `heros` table.
-
-We can do several actions with the database such as adding, changing, or removing a column, rolling back our changes, or even dropping the database itself all through `rake`.
-
-In order to change the database, we always want to add a new migration rather than dropping it and changing the old migrations.
-
-## ActiveRecord
-
-Once we've got our database, we need to integrate ActiveRecord. Just like the other gems, we can drop `activerecord` into the `Gemfile` and let it work its magic. We'll also need to configure the adapter to now use ActiveRecord (check the documentation on github).
-
-We allow our `Hero` model to inherit from `ActiveRecord::Base` and it suddenly has access to a wide variety of methods we'd otherwise have to build ourselves such as `.create`, `#save`, `#update`, `#destroy`.
+Additionally, if a hero / villain is destroyed, let's make sure you also destroy their connections as well! You can do that with the `dependent: :destroy` macro.
 
 ## Seeding
 
-Now that ActiveRecord has been added, we can utilize our `db/seeds.rb` file. When we run `rake db:seed`, it'll run all the code in `db/seeds.rb`. The purpose of this is to allow ourselves to quickly create a whole slew of testing data.
+Now that ActiveRecord has been added, we can utilize our `db/seeds.rb` file. When we run `rake db:seed`, it'll run all the code in `db/seeds.rb`. The purpose of this is to allow ourselves to quickly create a whole slew of testing data. I've already created data for the Justice League but feel free to add additional seeds for more heroes, villains and cities. When it comes to making a nemesis, how would you go about doing that?
 
-## Resources
+## Testing
 
-rake - https://github.com/ruby/rake
-
-standalone migrations - https://github.com/thuss/standalone-migrations
-
-migrations guide - https://guides.rubyonrails.org/active_record_migrations.html
-
-activerecord - https://github.com/rails/rails/tree/master/activerecord
+You can test your code with `rake console`. I'd recommend testing at each section to make sure it works.
