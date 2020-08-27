@@ -8,13 +8,15 @@ I'd recommend drawing out a diagram to represent the object relationships so you
 
 ## Building Migrations
 
-You'll need to build migrations for Villain, City, and Nemesis. When building the tables, make sure you check the pluralization for City and Nemesis since naming the table wrong will break it.
+You'll need to build migrations for Villain, City, and Rivalry. When building the tables, make sure you check the pluralization for City and Rivalry since naming the table wrong will break it.
+
+You can add to the database with `rake db:new_migration name=your_migration_name` and then editing the migration file that appears.
 
 Villain needs these columns: `name`, `power`, `desire`
 
 City needs these columns: `name`, `safety_rating`
 
-Nemesis only keeps track of which heroes and villains are rivals with each other. You won't need any columns besides foreign keys.
+Rivalry only keeps track of which heroes and villains are rivals with each other. You won't need any columns besides foreign keys.
 
 In order to build out the relationships, you'll need to figure out which models need foreign keys as well! Remember where the source of truth lies!
 
