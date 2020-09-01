@@ -1,0 +1,10 @@
+<h1>Toppings</h1>
+
+<ol>
+
+  <% @toppings.each do |topping| %>
+  <li><%= topping.name %> | Calories:<%= topping.calories %> | Vegetarian? <%= topping.vegetarian %></li>
+  <br>
+  <% end %>
+
+</ol>

@@ -4,7 +4,7 @@ Sinatra is a lightweight framework that provides models, views, and controllers.
 
 ## Install Corneal
 
-Moving forward we'll be utilizing numerous generators and templates. Corneal is one such template. You can find it at:
+Moving forward we'll be utilizing numerous generators and templates. Corneal is one such generator. You can find it at:
 
 https://github.com/thebrianemory/corneal
 
