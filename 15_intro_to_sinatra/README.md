@@ -26,7 +26,7 @@ Our project also has controllers. Our controllers are similar to a delivery serv
 
 If we want to, we can pass instance variables into the view through the controller.
 
-`erb` tags (the `<%=  %>` and `<%  %>`) come in two different flavors. The `=` that the erb tag will be shown to the user. Without the `=`, the tag will not be used which is helpful for logic.
+Our `erb` tags (the `<%=  %>` and `<%  %>`) come in two different flavors. The anything in a `<%=` erb tag will be shown to the user. Without the `<%=`, the tag will not be shown in the HTML. The second is mainly helpful for ruby operations that we have to do inside the `erb`.
 
 ## Models
 
