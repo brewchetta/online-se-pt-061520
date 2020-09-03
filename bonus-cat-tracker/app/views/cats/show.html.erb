@@ -1,0 +1,13 @@
+<h2><%= @cat.name %></h2>
+
+<img class="cat-img" src="<%= @cat.img_url %>" alt="<%= @cat.name %>">
+
+<div class="cat-info">
+
+  <p><%= @cat.age %></p>
+
+  <p><%= @cat.to_human_years %></p>
+
+  <a href="<%= "/locations/#{@cat.location.slug}" %>"><%= @cat.location.room %></a>
+
+</div>

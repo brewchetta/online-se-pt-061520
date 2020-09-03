@@ -1,0 +1,65 @@
+a {
+  text-decoration: none;
+}
+
+body {
+  padding-top: 2em;
+}
+
+/* --- Nav Bar --- */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: orange;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3px;
+}
+
+nav form {
+  text-align: right;
+}
+
+nav a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 2em;
+}
+
+nav a:hover {
+  text-decoration: overline;
+}
+
+/* --- Cat Item --- */
+
+.cat-item {
+  background-position: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+  transition: filter 0.5s;
+  filter: grayscale(100%);
+}
+
+.cat-item:hover {
+  filter: grayscale(0);
+}
+
+.cat-item * {
+  color: black;
+  text-decoration: none;
+}
+
+.cat-item a:hover {
+  color: blue;
+}
+
+/* --- Cat Show --- */
+
+.cat-img {
+  width: 500px;
+}

@@ -1,0 +1,23 @@
+<h1>Welcome to Cat Tracker</h1>
+
+<% @cats.each do |cat| %>
+
+  <a href="/cats/<%= cat.id %>">
+
+    <div class="cat-item" style="background-image: url('<%= cat.img_url %>')">
+
+      <h3>
+        <%= cat.name %>
+      </h3>
+
+      <p>Age: <%= cat.age %></p>
+
+      <p>Age In Human Years: <%= cat.to_human_years %></p>
+
+      <span>Current location: <a href="/locations/<%= cat.location.slug %>"><%= cat.location.room %></a></span>
+
+    </div>
+
+  </a>
+
+<% end %>

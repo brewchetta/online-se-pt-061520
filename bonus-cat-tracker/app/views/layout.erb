@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CatTracker</title>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="left-nav">
+        <a href="/">Home</a>
+        <a href="/cats/new">Add A Cat</a>
+      </div>
+
+      <div class="right-nav">
+        <form action="/search-rooms" method="post">
+          <input type="text" name="search" placeholder="Search for a room">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+
+        <!-- Everything outside yield will appear on every page -->
+        <%= yield %>
+
+    </div>
+  </body>
+</html>

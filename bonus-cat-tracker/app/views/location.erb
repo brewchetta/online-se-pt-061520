@@ -1,0 +1,11 @@
+<h2><%= @location.room.capitalize %></h2>
+
+<ul>
+
+  <% @location.cats.each do |cat| %>
+
+  <li><%= cat.name %></li>
+
+  <% end %>
+
+</ul>

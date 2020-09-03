@@ -1,0 +1,25 @@
+<form action="/cats" method="post">
+
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="your cat's name">
+
+  <label for="age">Age</label>
+  <input type="number" name="age">
+
+  <label for="img_url">Image URL</label>
+  <input type="text" name="img_url">
+
+  <label for="location_id">Location</label>
+  <select name="location_id">
+
+    <% @locations.each do |l| %>
+
+    <option value="<%= l.id %>" ><%= l.room %></option>
+
+    <% end %>
+
+  </select>
+
+  <input type="submit" value="Create Cat!">
+
+</form>
