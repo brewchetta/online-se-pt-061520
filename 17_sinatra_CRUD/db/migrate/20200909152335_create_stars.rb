@@ -3,7 +3,7 @@ class CreateStars < ActiveRecord::Migration
     create_table :stars do |t|
       t.string :name
       t.integer :light_years
-      t.integer :constellation_id, :default => 1
+      t.integer :constellation_id
 
       t.timestamps null: false
     end
