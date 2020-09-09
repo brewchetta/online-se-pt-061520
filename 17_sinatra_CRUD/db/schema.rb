@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20200909152335) do
   create_table "stars", force: :cascade do |t|
     t.string   "name"
     t.integer  "light_years"
-    t.integer  "constellation_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "constellation_id", default: 1
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
 end
