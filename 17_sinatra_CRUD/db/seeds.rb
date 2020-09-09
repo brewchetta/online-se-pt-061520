@@ -16,6 +16,7 @@ constellations = [
   {name: "Libra"},
   {name: "Leo"},
   {name: "Gemini"},
+  {name: "Draco"},
   {name: "Cygnus"},
   {name: "Cassiopeia"},
   {name: "Capricornus"},
