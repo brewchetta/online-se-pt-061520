@@ -21,8 +21,22 @@
     width: 100%;
     text-align: center;
     background-image: url("/images/starmap.webp");
-    padding-top: 2.5em;
+    padding-top: 2em;
     background-repeat: no-repeat;
+  }
+
+  .wrapper {
+    background: #0009;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-shadow: 0 2px black;
   }
 
   /* --- Nav Bar --- */

@@ -1,0 +1,15 @@
+<h1>Edit That Star!</h1>
+
+<form action="/stars/<%= @star.id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <label for="name">Name: </label>
+  <input type="text" name="name" value="<%= @star.name %>">
+  <label for="light_years">Light Years:</label>
+  <input type="text" name="light_years" value="<%= @star.light_years %>">
+  <input type="submit" value="Edit That Star!">
+</form>
+
+<form action="/stars/<%= @star.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE THIS STAR">
+</form>
