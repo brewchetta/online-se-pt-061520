@@ -1,0 +1,15 @@
+<h2>Your 'Za Orders</h2>
+
+<% if @pizzas.empty? %>
+
+  <h3>You haven't placed any orders yet! Create a new order <a href="/pizzas/new">here</a></h3>
+
+<% end %>
+
+<ol>
+  <% @pizzas.each do |p| %>
+
+  <li><%= p.cheese %> | <%= p.topping %> | <%= p.sauce %> | $<%= rand(9..20) %>.99</li>
+
+  <% end %>
+</ol>
