@@ -57,3 +57,14 @@ nav a {
 a {
   color: #FDD6C3;
 }
+
+input {
+  margin: 4px;
+}
+
+form {
+  border: solid black 2px;
+  box-shadow: 4px 4px black;
+  background: #fffc;
+  text-align: center;
+}
