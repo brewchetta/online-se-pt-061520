@@ -12,7 +12,7 @@ class PizzasController < ApplicationController
 
   post "/pizzas" do
     @pizza = Pizza.new(params[:pizza])
-    if pizza.save
+    if @pizza.save
       redirect "/pizzas"
     else
       erb :"pizzas/new"
