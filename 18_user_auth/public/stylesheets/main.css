@@ -1,10 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-image: url("https://www.tasteofhome.com/wp-content/uploads/2019/12/The-Best-Sausage-Pizzas_EXPS_TOHFM20_245369-_E09_26_4b-11.jpg");
+  background-size: cover;
   text-align: right;
+  padding-top: 3em;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: 'Kufam', cursive;
 }
 
 p, li, h1, h2, h3 {
   background: purple;
-  box-shadow: 2px 4px black;
+  box-shadow: 4px 4px black;
   color: white;
+  margin-top: 2em;
+  display: inline-block;
+  border: solid black 2px; 
+}
+
+/* --- Navbar --- */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 4px 4px black;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin-right: 3em;
+  margin-left: 0.5em;
 }
