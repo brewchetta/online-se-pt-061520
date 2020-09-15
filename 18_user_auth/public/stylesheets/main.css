@@ -13,13 +13,28 @@ body {
   font-family: 'Kufam', cursive;
 }
 
+#background-mask {
+  background-color: #fff4;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.wrapper {
+  z-index: 1;
+}
+
 p, li, h1, h2, h3 {
   background: purple;
   box-shadow: 4px 4px black;
   color: white;
   margin-top: 2em;
   display: inline-block;
-  border: solid black 2px; 
+  border: solid black 2px;
+  padding: 0.5em;
 }
 
 /* --- Navbar --- */
@@ -37,4 +52,8 @@ nav a {
   text-decoration: none;
   margin-right: 3em;
   margin-left: 0.5em;
+}
+
+a {
+  color: #FDD6C3;
 }
