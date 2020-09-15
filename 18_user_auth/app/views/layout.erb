@@ -11,11 +11,19 @@
     <div class="wrapper">
 
       <nav>
-        <a href="/signup">Signup</a>
-        <a href="/login">Login</a>
-        <a href="#">TODO: Build a Logout Button</a>
+        <% if logged_in? %>
         <a href="/pizzas/new">Order a 'Za</a>
         <a href="/pizzas">See Your Orders</a>
+        
+        <form action="/logout" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Logout">
+        </form>
+
+        <% else %>
+        <a href="/signup">Signup</a>
+        <a href="/login">Login</a>
+        <% end %>
       </nav>
 
       <%= yield %>

@@ -1,17 +1,19 @@
 class PizzasController < ApplicationController
 
   get "/pizzas" do
-    @pizzas = Pizza.all
+    @pizzas = current_user.pizzas
     erb :"pizzas/index"
   end
 
   get "/pizzas/new" do
+    redirect_if_logged_out
     @pizza = Pizza.new
     erb :"pizzas/new"
   end
 
   post "/pizzas" do
-    @pizza = Pizza.new(params[:pizza])
+    redirect_if_logged_out
+    @pizza = current_user.pizzas.build(params[:pizza])
     if @pizza.save
       redirect "/pizzas"
     else
