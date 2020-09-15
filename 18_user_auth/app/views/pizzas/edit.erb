@@ -1,1 +1,17 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h3>Edit Your Order</h3>
+
+<form action="/pizzas/<%= @pizza.id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <label for="pizza[cheese]">Cheese: </label>
+  <input type="text" name="pizza[cheese]" value="<%= @pizza.cheese %>">
+  <br>
+  <label for="pizza[topping]">Topping: </label>
+  <input type="text" name="pizza[topping]" value="<%= @pizza.topping %>">
+  <br>
+  <label for="pizza[sauce]">Sauce: </label>
+  <input type="text" name="pizza[sauce]" value="<%= @pizza.sauce %>">
+  <br>
+  <input type="submit" value="Order Your 'Za!">
+
+</form>
