@@ -9,7 +9,7 @@
 <ol>
   <% @pizzas.each do |p| %>
 
-  <li><%= p.cheese %> | <%= p.topping %> | <%= p.sauce %> | $<%= rand(9..20) %>.99</li>
+  <li><%= p.cheese %> | <%= p.topping %> | <%= p.sauce %> | $<%= rand(9..20) %>.99 | <a href="/pizzas/<%= p.id %>/edit">Edit</a></li>
 
   <% end %>
 </ol>
