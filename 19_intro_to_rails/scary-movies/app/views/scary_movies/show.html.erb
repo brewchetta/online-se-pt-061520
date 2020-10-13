@@ -1,0 +1,8 @@
+<h1>ScaryMovies#show</h1>
+
+<% if @scary_movie %>
+  Name: <%= @scary_movie.title %>
+  Scare Rating: <%= @scary_movie.scariness_rating %>
+<% else %>
+  <h1>NO MOVIE HERE</h1>
+<% end %>
