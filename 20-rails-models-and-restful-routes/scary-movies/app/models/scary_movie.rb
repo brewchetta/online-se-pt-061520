@@ -1,0 +1,2 @@
+class ScaryMovie < ApplicationRecord
+end

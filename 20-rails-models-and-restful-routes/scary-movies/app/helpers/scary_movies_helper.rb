@@ -1,0 +1,2 @@
+module ScaryMoviesHelper
+end

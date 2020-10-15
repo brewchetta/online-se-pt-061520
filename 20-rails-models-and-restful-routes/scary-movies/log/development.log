@@ -1,0 +1,363 @@
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (346.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (373.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-13 22:25:01.870293"], ["updated_at", "2020-10-13 22:25:01.870293"]]
+  [1m[35m (349.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScaryMovies (20201013222709)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "scary_movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "scariness_rating" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201013222709"]]
+  [1m[35m (342.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScaryMovies (20201013222709)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "scary_movies"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201013222709"]]
+  [1m[35m (427.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScaryMovies (20201013222709)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "scary_movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "scariness_rating" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201013222709"]]
+  [1m[35m (229.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-10-13 18:31:12 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.2ms | Allocations: 478)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 2620)
+
+
+Started GET "/scary_movies/index" for 127.0.0.1 at 2020-10-13 18:31:39 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.html.erb within layouts/application
+  Rendered scary_movies/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 19897)
+
+
+Started GET "/scary_movies/show" for 127.0.0.1 at 2020-10-13 18:31:57 -0400
+Processing by ScaryMoviesController#show as HTML
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2002)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-13 18:34:18 -0400
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-13 18:36:01 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.html.erb within layouts/application
+  Rendered scary_movies/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1964)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-13 18:38:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.html.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.html.erb:2
+  Rendered scary_movies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1210)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 4364)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:38:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/scary-movies/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-13 18:40:07 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (Duration: 3.6ms | Allocations: 3225)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.8ms | Allocations: 703)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 6.7ms | Allocations: 6132)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 7292)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:41:48 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/scary-movies/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:41:54 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 82)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2758)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:42:46 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1367)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2363)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>ScaryMovies#show</h1>
+    2: 
+    3: Name: <%= @scary_movie.name %>
+    4: Scare Rating: <%= @scary_movie.scariness_rating %>
+  
+app/views/scary_movies/show.html.erb:3
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:43:12 -0400
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:43:14 -0400
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:43:15 -0400
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:43:18 -0400
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:43:19 -0400
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:43:28 -0400
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:44:38 -0400
+Started PUT "/__web_console/repl_sessions/f9c899877fd3408331d398a4208d714f" for 127.0.0.1 at 2020-10-13 18:44:44 -0400
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/scary_movies/show.html.erb:3
+  [1m[36mScaryMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "scary_movies" ("title", "scariness_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "It"], ["scariness_rating", 7], ["created_at", "2020-10-13 22:44:44.131791"], ["updated_at", "2020-10-13 22:44:44.131791"]]
+  ↳ app/views/scary_movies/show.html.erb:3
+  [1m[35m (295.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/scary_movies/show.html.erb:3
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:44:59 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1237)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1492)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>ScaryMovies#show</h1>
+    2: 
+    3: Name: <%= @scary_movie.name %>
+    4: Scare Rating: <%= @scary_movie.scariness_rating %>
+  
+app/views/scary_movies/show.html.erb:3
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:45:16 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1354)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2345)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h1>ScaryMovies#show</h1>
+    2: 
+    3: Name: <%= @scary_movie.title %>
+    4: Scare Rating: <%= @scary_movie.scariness_rating %>
+  
+app/views/scary_movies/show.html.erb:3
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:46:12 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 11ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 6868)
+
+
+Started GET "/scary-movies/2" for 127.0.0.1 at 2020-10-13 18:48:21 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1919)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ScaryMovie with 'id'=2):
+  
+app/controllers/scary_movies_controller.rb:8:in `show'
+Started GET "/scary-movies/2" for 127.0.0.1 at 2020-10-13 18:48:39 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1240)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 3079)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h1>ScaryMovies#show</h1>
+    2: 
+    3: Name: <%= @scary_movie.title %>
+    4: Scare Rating: <%= @scary_movie.scariness_rating %>
+  
+app/views/scary_movies/show.html.erb:3
+Started GET "/scary-movies/2" for 127.0.0.1 at 2020-10-13 18:49:49 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1040)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 2567)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>ScaryMovies#show</h1>
+
+<% if @scary_movie %>
+  Name: <%= @scary_movie.title %>
+  Scare Rating: <%= @scary_movie.scariness_rating
+<% else %>
+  <h1>NO MOVIE HERE</h1>
+<% end %>
+
+):
+1:    <h1>ScaryMovies#show</h1>
+2:    
+3:    <% if @scary_movie %>
+4:      Name: <%= @scary_movie.title %>
+5:      Scare Rating: <%= @scary_movie.scariness_rating
+6:    <% else %>
+7:      <h1>NO MOVIE HERE</h1>
+8:    <% end %>
+  
+app/views/scary_movies/show.html.erb:6: syntax error, unexpected '<', expecting ')'
+app/views/scary_movies/show.html.erb:6: syntax error, unexpected '<', expecting ')'
+app/views/scary_movies/show.html.erb:6: syntax error, unexpected '<', expecting ')'
+app/views/scary_movies/show.html.erb:6: syntax error, unexpected '<', expecting ')'
+app/views/scary_movies/show.html.erb:6: syntax error, unexpected '<', expecting ')'
+app/views/scary_movies/show.html.erb:6: syntax error, unexpected '<', expecting ')'
+Started GET "/scary-movies/2" for 127.0.0.1 at 2020-10-13 18:50:02 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 163)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 3367)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:50:34 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 5391)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:54:38 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 163)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3374)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:55:46 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 184ms (Views: 182.7ms | ActiveRecord: 0.1ms | Allocations: 9426)
+
+
+Started GET "/scary-movies/1" for 127.0.0.1 at 2020-10-13 18:56:29 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:8:in `show'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 6568)
+
+
