@@ -1,0 +1,11 @@
+<h1>Add A Movie!</h1>
+
+<form action="/scary-movies" method="post">
+  <input type="text" name="title" value="<%= @scary_movie.title %>" placeholder="movie title">
+  <input type="number" name="scariness_rating" value="<%= @scary_movie.scariness_rating %>" placeholder="movie scariness">
+
+  <input type="submit" value="Submit">
+</form>
+
+
+<footer>scary_movies#new</footer>

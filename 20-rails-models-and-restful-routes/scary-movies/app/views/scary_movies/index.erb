@@ -1,0 +1,7 @@
+<h1>All The Scary Movies</h1>
+<% @scary_movies.each do |movie| %>
+  <a href="/scary-movies/<%= movie.id %>"><%= movie.title %></a>
+  <br><br>
+<% end %>
+
+<footer>scary_movies#index</footer>
