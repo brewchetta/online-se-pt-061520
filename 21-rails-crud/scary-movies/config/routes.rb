@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/scary-movies/new", to: "scary_movies#new", as: "new_scary_movie"
 
   # CREATE
-  post "/scary-movies", to: "scary_movies#create", as: "scary_movies"
+  post "/scary-movies/new", to: "scary_movies#create", as: "scary_movies"
 
   # INDEX
   get "/scary-movies", to: "scary_movies#index"
@@ -14,13 +14,13 @@ Rails.application.routes.draw do
   # SHOW
   get "/scary-movies/:id", to: "scary_movies#show", as: "scary_movie"
 
-  # EDIT
-  get "/scary-movies/:id/edit", to: "scary_movies#edit", as: "edit_scary_movie"
-
   # UPDATE
   patch "/scary-movies/:id", to: "scary_movies#update"
 
   # DELETE
   delete "/scary-movies/:id", to: "scary_movies#delete"
+
+  # EDIT
+  get "/scary-movies/:id/edit", to: "scary_movies#edit", as: "edit_scary_movie"
 
 end

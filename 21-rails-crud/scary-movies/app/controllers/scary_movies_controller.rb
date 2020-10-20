@@ -1,32 +1,39 @@
 class ScaryMoviesController < ApplicationController
 
-  # INDEX
   def index
     @scary_movies = ScaryMovie.all
-    # render :index
   end
 
-  # SHOW
   def show
-    @scary_movie = ScaryMovie.find_by(id: params[:id])
-    # render :show
+    find_movie
   end
 
-  # NEW
   def new
+    @movie = ScaryMovie.new
   end
 
-  # CREATE
   def create
-    # byebug
-    @movie = ScaryMovie.create(scary_movie_params)
-    redirect_to scary_movie_path(@movie)
+    @movie = ScaryMovie.new(params[:movie])
+    if @movie.save
+      redirect_to scary_movie_path(@movie)
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private
 
-  def scary_movie_params
-    params.require(:movie).permit(:title, :scariness_rating)
+  def find_movie
+    @scary_movie = ScaryMovie.find_by(id: params[:id])
   end
 
 end

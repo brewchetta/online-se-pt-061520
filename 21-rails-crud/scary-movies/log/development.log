@@ -1774,3 +1774,291 @@ Processing by ScaryMoviesController#index as HTML
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 2956)
 
 
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:48:49 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (Duration: 16.4ms | Allocations: 3916)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 3.2ms | Allocations: 930)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 76.9ms | Allocations: 7511)
+Completed 200 OK in 241ms (Views: 169.5ms | ActiveRecord: 0.0ms | Allocations: 9398)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:49:40 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (Duration: 4.8ms | Allocations: 3887)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.7ms | Allocations: 703)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 7.2ms | Allocations: 7110)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 9615)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:49:50 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (Duration: 10.7ms | Allocations: 2710)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.4ms | Allocations: 121)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 13.9ms | Allocations: 4536)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 5248)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:50:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [28 times] (Duration: 3.6ms | Allocations: 3762)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 4.9ms | Allocations: 6089)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 6792)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:50:36 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (Duration: 3.8ms | Allocations: 3635)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5899)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 7589)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:50:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (Duration: 4.1ms | Allocations: 3636)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 5.5ms | Allocations: 5901)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 6614)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:51:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [28 times] (Duration: 4.2ms | Allocations: 3762)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 5.5ms | Allocations: 6089)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 7778)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:52:14 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (Duration: 3.4ms | Allocations: 3633)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.5ms | Allocations: 120)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 43.6ms | Allocations: 5896)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms | Allocations: 6599)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-10-20 11:52:37 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (Duration: 3.4ms | Allocations: 3634)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 4.9ms | Allocations: 5898)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 7596)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-20 11:54:46 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/brewchetta/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.9ms | Allocations: 200)
+Completed 200 OK in 21ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 1172)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 11:54:53 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 5.1ms | Allocations: 4778)
+Completed 200 OK in 132ms (Views: 129.9ms | ActiveRecord: 0.5ms | Allocations: 13017)
+
+
+Started GET "/scary-movies/2" for 127.0.0.1 at 2020-10-20 11:54:55 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:38:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 186)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 3097)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 11:54:57 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 10.6ms | Allocations: 809)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 2598)
+
+
+Started GET "/scary-movies/5" for 127.0.0.1 at 2020-10-20 11:54:59 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:38:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 42)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2370)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 11:55:00 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 2.1ms | Allocations: 806)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2584)
+
+
+Started GET "/scary-movies/4" for 127.0.0.1 at 2020-10-20 11:55:01 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:38:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 2362)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 11:55:02 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.1ms | Allocations: 806)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2591)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 11:57:03 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.5ms | Allocations: 341)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2242)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 11:57:18 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Godzilla", "scariness_rating"=>"3"}, "authenticity_token"=>"5U4oZjV+L3xGirFu7ZU6SvboOvhLL1FhGrp2tjW5J+p+6YYaihT8yo82WcWEUn1YXV9oLw0ChKAvy8drRe8U9A=="}
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.3ms | Allocations: 57)
+Completed 200 OK in 39ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 8189)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 11:59:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Godzilla", "scariness_rating"=>"3"}, "authenticity_token"=>"5U4oZjV+L3xGirFu7ZU6SvboOvhLL1FhGrp2tjW5J+p+6YYaihT8yo82WcWEUn1YXV9oLw0ChKAvy8drRe8U9A=="}
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.4ms | Allocations: 208)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 7972)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 11:59:55 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Godzilla", "scariness_rating"=>"3"}, "authenticity_token"=>"rzN7ycigqwTC39whbhvcCmmhTs7dbm+ZnW9jDggmjYM0lNW1d8p4sgtjNIoH3JsYwhYcGZtDulioHtLTeHC+nQ=="}
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+Completed 200 OK in 15ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2947)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 11:59:59 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.3ms | Allocations: 1015)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2960)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:01:06 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1879)
+
+
+  
+NameError (uninitialized constant ScaryMoviesController::Movie):
+  
+app/controllers/scary_movies_controller.rb:15:in `new'
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:01:16 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.4ms | Allocations: 225)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 5850)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 12:01:22 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Godzilla", "scariness_rating"=>"3"}, "authenticity_token"=>"SuEWzbSFWz5Etj6ublbE8KSqqKNq9h9ONi3XlzydwH3RRrixC++IiI0K1gUHkYPiDx36dCzbyo8DXGZKTMvzYw=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:21:in `create'
+  [1m[36mScaryMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "scary_movies" ("title", "scariness_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Godzilla"], ["scariness_rating", 3], ["created_at", "2020-10-20 16:01:22.906883"], ["updated_at", "2020-10-20 16:01:22.906883"]]
+  ↳ app/controllers/scary_movies_controller.rb:21:in `create'
+  [1m[35m (157.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:21:in `create'
+Redirected to http://localhost:3000/scary-movies/6
+Completed 302 Found in 165ms (ActiveRecord: 157.7ms | Allocations: 3913)
+
+
+Started GET "/scary-movies/6" for 127.0.0.1 at 2020-10-20 12:01:23 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:40:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 183)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 2778)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:01:28 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.3ms | Allocations: 226)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 1848)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 12:01:34 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Godzookie", "scariness_rating"=>""}, "authenticity_token"=>"/bA2UpeU7XGd7n5pDXX3I1j/be3NzqHLZdh3PlX3pSVmF5guKP4+x1RSlsJksrAx80g/OovjdApQqcbjJaGWOw=="}
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.2ms | Allocations: 62)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2805)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 12:02:07 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.0ms | Allocations: 865)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2650)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:02:48 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.5ms | Allocations: 364)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 6850)
+
+
+Started POST "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:02:55 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Star Wars", "scariness_rating"=>""}, "authenticity_token"=>"IiY4aFlw5jmI02TlSgUtopxMlNfZv8lawFmMpcY++su5gZYU5ho1j0FvjE4jwmqwN/vGAJ+SHJv1KD14tmjJ1Q=="}
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.3ms | Allocations: 62)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2825)
+
+

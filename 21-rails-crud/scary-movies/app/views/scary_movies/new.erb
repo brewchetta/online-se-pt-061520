@@ -1,8 +1,11 @@
 <h1>Add A Movie!</h1>
 
-<form action="/scary-movies" method="post">
-  <input type="text" name="movie[title]" placeholder="movie title">
-  <input type="number" name="movie[scariness_rating]" placeholder="movie scariness">
+<form action="/scary-movies/new" method="post">
+  <label for="movie[title]">Title:</label>
+  <input type="text" name="movie[title]" value="<%= @movie.title %>">
+
+  <label for="movie[scariness_rating]">Scariness:</label>
+  <input type="number" name="movie[scariness_rating]" value="<%= @movie.scariness_rating %>">
 
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
