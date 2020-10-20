@@ -22,16 +22,9 @@ class ScaryMoviesController < ApplicationController
   end
 
   def edit
-    find_movie
   end
 
   def update
-    find_movie
-    if @scary_movie.update(scary_movie_params)
-      redirect_to scary_movie_path(@scary_movie)
-    else
-      render :edit
-    end
   end
 
   def destroy
@@ -41,10 +34,6 @@ class ScaryMoviesController < ApplicationController
 
   def find_movie
     @scary_movie = ScaryMovie.find_by(id: params[:id])
-  end
-
-  def scary_movie_params
-    params.require(:scary_movie).permit(:title, :scariness_rating)
   end
 
 end

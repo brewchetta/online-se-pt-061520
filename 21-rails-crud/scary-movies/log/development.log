@@ -620,3 +620,34 @@ Processing by ScaryMoviesController#index as HTML
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 2731)
 
 
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 16:10:02 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:5
+  Rendered scary_movies/index.erb within layouts/application (Duration: 5.4ms | Allocations: 4962)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 10936)
+
+
+Started GET "/scary-movies/6" for 127.0.0.1 at 2020-10-20 16:11:26 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:36:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 187)
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 4869)
+
+
+Started GET "/scary-movies/6" for 127.0.0.1 at 2020-10-20 16:11:30 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:36:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 43)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2390)
+
+

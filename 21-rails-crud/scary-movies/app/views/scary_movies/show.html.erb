@@ -1,10 +1,6 @@
 <h1><%= @scary_movie.title %></h1>
 <h3>Scare Rating: <%= @scary_movie.scariness_rating %></h3>
 
-<%= button_to "Delete", scary_movie_path(@scary_movie), method: :delete %>
-
-<br>
-
 <%= link_to "Back to Index", scary_movies_path %>
 
 <footer>scary_movies#show</footer>
