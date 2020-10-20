@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScaryMovies</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+
+    <%# In case we want to include error messages later %>
+    <% if @errors %>
+      <ul>
+      <% @errors.each do |err| %>
+        <li><%= err %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>

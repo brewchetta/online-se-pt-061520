@@ -1,0 +1,13 @@
+<h1>Add A Movie!</h1>
+
+<form action="/scary-movies" method="post">
+  <input type="text" name="movie[title]" placeholder="movie title">
+  <input type="number" name="movie[scariness_rating]" placeholder="movie scariness">
+
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+<footer>scary_movies#new</footer>
