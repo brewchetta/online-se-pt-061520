@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  # resources :controller_name, only: :index
+  # resources :scary_movie
   # HTTP VERB - URI PATH - CONTROLLER - ACTION - PATH
 
   # NEW
   get "/scary-movies/new", to: "scary_movies#new", as: "new_scary_movie"
 
   # CREATE
-  post "/scary-movies/new", to: "scary_movies#create", as: "scary_movies"
+  post "/scary-movies", to: "scary_movies#create", as: "scary_movies"
 
   # INDEX
   get "/scary-movies", to: "scary_movies#index"
+
+  # EDIT
+  get "/scary-movies/:id/edit", to: "scary_movies#edit", as: "edit_scary_movie"
 
   # SHOW
   get "/scary-movies/:id", to: "scary_movies#show", as: "scary_movie"
@@ -19,8 +22,5 @@ Rails.application.routes.draw do
 
   # DELETE
   delete "/scary-movies/:id", to: "scary_movies#delete"
-
-  # EDIT
-  get "/scary-movies/:id/edit", to: "scary_movies#edit", as: "edit_scary_movie"
 
 end

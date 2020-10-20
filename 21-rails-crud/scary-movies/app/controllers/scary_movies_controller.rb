@@ -27,7 +27,7 @@ class ScaryMoviesController < ApplicationController
   def update
   end
 
-  def destroy
+  def delete
   end
 
   private
