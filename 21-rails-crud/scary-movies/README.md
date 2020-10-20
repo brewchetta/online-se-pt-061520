@@ -1,5 +1,16 @@
-<h1>Add A Movie!</h1>
+# Rails CRUD
 
+## link_to and button_to
+
+```
+<%= link_to "Murder movie", scary_movie_path(@scary_movie), method: :delete %>
+
+<%= button_to "Murder movie", scary_movie_path(@scary_movie), method: :delete %>
+```
+
+## The Three Types of Form Helpers:
+
+```
 <%= form_tag scary_movies_path do %>
   <%= label_tag "Title" %>
   <%= text_field_tag "scary_movies[title]" %>
@@ -23,5 +34,4 @@
 <%= form.number_field :scariness_rating %>
 <%= form.submit "Add Your Movie" %>
 <% end %>
-
-<footer>scary_movies#new</footer>
+```

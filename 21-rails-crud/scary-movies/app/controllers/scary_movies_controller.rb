@@ -1,11 +1,8 @@
 class ScaryMoviesController < ApplicationController
+  before_action :find_movie, only: [:show, :edit, :update, :destroy]
 
   def index
     @scary_movies = ScaryMovie.all
-  end
-
-  def show
-    find_movie
   end
 
   def new
@@ -21,19 +18,24 @@ class ScaryMoviesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
+    @scary_movie.update(scary_movie_params)
+    redirect_to scary_movie_path(@scary_movie)
   end
 
   def destroy
+    @scary_movie.destroy
+    redirect_to scary_movies_path
   end
 
   private
 
   def find_movie
     @scary_movie = ScaryMovie.find_by(id: params[:id])
+  end
+
+  def scary_movie_params
+    params.require(:scary_movie).permit(:title, :scariness_rating)
   end
 
 end
