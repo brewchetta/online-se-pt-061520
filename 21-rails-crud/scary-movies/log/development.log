@@ -275,3 +275,348 @@ Processing by ScaryMoviesController#show as HTML
 Completed 200 OK in 90ms (Views: 56.7ms | ActiveRecord: 1.0ms | Allocations: 913850)
 
 
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:53:06 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.9ms | Allocations: 721)
+Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 10673)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:53:31 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.9ms | Allocations: 402)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3208)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:53:58 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.4ms | Allocations: 442)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3244)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:54:08 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.7ms | Allocations: 504)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3307)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 15:54:33 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"/bpm7veK/A3iCnUYklDvOUXAggt3dMGqDEGBr1qTrqwReP6h/vXOo5KncnDu1C3pRFTU6sSyZWur0Z2wpKxw0Q==", "scary_movie"=>{"title"=>"The Blob", "scariness_rating"=>"2"}, "commit"=>"Add Your Movie!"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 702)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: movie):
+  
+app/controllers/scary_movies_controller.rb:40:in `scary_movie_params'
+app/controllers/scary_movies_controller.rb:16:in `create'
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 15:55:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"/bpm7veK/A3iCnUYklDvOUXAggt3dMGqDEGBr1qTrqwReP6h/vXOo5KncnDu1C3pRFTU6sSyZWur0Z2wpKxw0Q==", "scary_movie"=>{"title"=>"The Blob", "scariness_rating"=>"2"}, "commit"=>"Add Your Movie!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+  [1m[36mScaryMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "scary_movies" ("title", "scariness_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Blob"], ["scariness_rating", 2], ["created_at", "2020-10-20 19:55:05.489272"], ["updated_at", "2020-10-20 19:55:05.489272"]]
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+  [1m[35m (54.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 55.4ms | Allocations: 8564)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"scary_movies", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/scary_movies_controller.rb:18:in `create'
+Started PUT "/__web_console/repl_sessions/891bab2c271dc4ea6f8859075bb2373a" for 127.0.0.1 at 2020-10-20 15:55:31 -0400
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 15:56:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"/bpm7veK/A3iCnUYklDvOUXAggt3dMGqDEGBr1qTrqwReP6h/vXOo5KncnDu1C3pRFTU6sSyZWur0Z2wpKxw0Q==", "scary_movie"=>{"title"=>"The Blob", "scariness_rating"=>"2"}, "commit"=>"Add Your Movie!"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+  [1m[36mScaryMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "scary_movies" ("title", "scariness_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Blob"], ["scariness_rating", 2], ["created_at", "2020-10-20 19:56:04.246517"], ["updated_at", "2020-10-20 19:56:04.246517"]]
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+  [1m[35m (97.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/scary-movies/10
+Completed 302 Found in 125ms (ActiveRecord: 98.6ms | Allocations: 8015)
+
+
+Started GET "/scary-movies/10" for 127.0.0.1 at 2020-10-20 15:56:04 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:36:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 356)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 3455)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 15:56:06 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 2.1ms | Allocations: 1090)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3018)
+
+
+Started GET "/scary-movies/10" for 127.0.0.1 at 2020-10-20 15:56:07 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:36:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 178)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2503)
+
+
+Started DELETE "/scary-movies/10" for 127.0.0.1 at 2020-10-20 15:56:08 -0400
+Processing by ScaryMoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"daDmEhOpAf7StZHdUlxDOk7wwVgthPAOHTBK/2NtBAUBx6w4y0A29Gx5FVW3unFwufoBF/44z1dAaKiK5Rx6Ng==", "id"=>"10"}
+No template found for ScaryMoviesController#destroy, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1694)
+
+
+Started DELETE "/scary-movies/10" for 127.0.0.1 at 2020-10-20 15:56:09 -0400
+Processing by ScaryMoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"daDmEhOpAf7StZHdUlxDOk7wwVgthPAOHTBK/2NtBAUBx6w4y0A29Gx5FVW3unFwufoBF/44z1dAaKiK5Rx6Ng==", "id"=>"10"}
+No template found for ScaryMoviesController#destroy, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 15:56:48 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 2.0ms | Allocations: 888)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 2674)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:56:51 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.3ms | Allocations: 280)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 2066)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:58:27 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 74.6ms | Allocations: 5903)
+Completed 200 OK in 92ms (Views: 91.5ms | ActiveRecord: 0.0ms | Allocations: 8701)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:58:58 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 9.9ms | Allocations: 3548)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.0ms | Allocations: 6345)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:59:15 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 4.0ms | Allocations: 946)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3738)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:59:22 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 4.0ms | Allocations: 946)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 3743)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:59:37 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 2.8ms | Allocations: 945)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3745)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 15:59:48 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 4.2ms | Allocations: 835)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 3631)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 16:01:28 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.5ms | Allocations: 444)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3236)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 16:01:38 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.3ms | Allocations: 608)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3407)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 16:01:44 -0400
+Processing by ScaryMoviesController#new as */*
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.7ms | Allocations: 451)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2263)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 16:02:29 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.8ms | Allocations: 662)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 3459)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 16:03:06 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.1ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3397)
+
+
+Started POST "/scary-movies" for 127.0.0.1 at 2020-10-20 16:03:15 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"XDm7/pVICCRA51GNtZq0X/0GS5HWucaAa0qyFnDE7vSw+yOxnDc6ijBKVuXJHnaP/JIdcGV/YkHM2q4JjvswiQ==", "scary_movie"=>{"title"=>"Alien", "scariness_rating"=>"6"}, "commit"=>"Create Scary movie"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+  [1m[36mScaryMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "scary_movies" ("title", "scariness_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Alien"], ["scariness_rating", 6], ["created_at", "2020-10-20 20:03:15.046105"], ["updated_at", "2020-10-20 20:03:15.046105"]]
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+  [1m[35m (156.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/scary-movies/11
+Completed 302 Found in 163ms (ActiveRecord: 156.5ms | Allocations: 3914)
+
+
+Started GET "/scary-movies/11" for 127.0.0.1 at 2020-10-20 16:03:15 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:36:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 337)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2803)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 16:03:17 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.8ms | Allocations: 1104)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3033)
+
+
+Started GET "/scary-movies/3" for 127.0.0.1 at 2020-10-20 16:04:03 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:37:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 346)
+Completed 200 OK in 18ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 7710)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 16:04:07 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.9ms | Allocations: 1127)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 3055)
+
+
+Started GET "/scary-movies/10" for 127.0.0.1 at 2020-10-20 16:04:08 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:37:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 178)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 2505)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 16:04:10 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.5ms | Allocations: 928)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 2718)
+
+
+Started GET "/scary-movies/11" for 127.0.0.1 at 2020-10-20 16:04:10 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:37:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 177)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2501)
+
+
+Started GET "/scary-movies/11/edit" for 127.0.0.1 at 2020-10-20 16:04:15 -0400
+Processing by ScaryMoviesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:37:in `find_movie'
+  Rendering scary_movies/edit.erb within layouts/application
+  Rendered scary_movies/edit.erb within layouts/application (Duration: 2.1ms | Allocations: 765)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 3223)
+
+
+Started PATCH "/scary-movies/11" for 127.0.0.1 at 2020-10-20 16:06:44 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#update as HTML
+  Parameters: {"authenticity_token"=>"Q4UsKI7kIPAlGBtFJQP5e6Dzz1zD4qjAMuGAUBO3jHaX4kke4h3pKAubrpMNPuvqLMW2JQsfPwv+6y0K7cDDrA==", "scary_movie"=>{"title"=>"", "scariness_rating"=>"5"}, "commit"=>"Update Scary movie", "id"=>"11"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:43:in `find_movie'
+  Rendering scary_movies/edit.erb within layouts/application
+  Rendered scary_movies/edit.erb within layouts/application (Duration: 0.9ms | Allocations: 520)
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 8294)
+
+
+Started PATCH "/scary-movies/11" for 127.0.0.1 at 2020-10-20 16:07:06 -0400
+Processing by ScaryMoviesController#update as HTML
+  Parameters: {"authenticity_token"=>"93PigbbFEh9rsCieQeoWJ93/1EAKoYiSODyom++jwKwjFIe32jzbx0UznUhp1wS2UcmtOcJcH1n0NgXBEdSPdg==", "scary_movie"=>{"title"=>"Aliens", "scariness_rating"=>"6"}, "commit"=>"Update Scary movie", "id"=>"11"}
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:43:in `find_movie'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:30:in `update'
+  [1m[36mScaryMovie Update (0.4ms)[0m  [1m[33mUPDATE "scary_movies" SET "title" = ?, "updated_at" = ? WHERE "scary_movies"."id" = ?[0m  [["title", "Aliens"], ["updated_at", "2020-10-20 20:07:06.123881"], ["id", 11]]
+  ↳ app/controllers/scary_movies_controller.rb:30:in `update'
+  [1m[35m (101.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/scary_movies_controller.rb:30:in `update'
+Redirected to http://localhost:3000/scary-movies/11
+Completed 302 Found in 122ms (ActiveRecord: 102.0ms | Allocations: 4601)
+
+
+Started GET "/scary-movies/11" for 127.0.0.1 at 2020-10-20 16:07:06 -0400
+Processing by ScaryMoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mScaryMovie Load (0.1ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies" WHERE "scary_movies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/scary_movies_controller.rb:43:in `find_movie'
+  Rendering scary_movies/show.html.erb within layouts/application
+  Rendered scary_movies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 179)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 2504)
+
+
+Started GET "/scary-movies" for 127.0.0.1 at 2020-10-20 16:07:09 -0400
+Processing by ScaryMoviesController#index as HTML
+  Rendering scary_movies/index.erb within layouts/application
+  [1m[36mScaryMovie Load (0.2ms)[0m  [1m[34mSELECT "scary_movies".* FROM "scary_movies"[0m
+  ↳ app/views/scary_movies/index.erb:2
+  Rendered scary_movies/index.erb within layouts/application (Duration: 1.3ms | Allocations: 944)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 2731)
+
+

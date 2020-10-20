@@ -1,14 +1,9 @@
-<h1>Edit <%= @scary_movie.title %></h1>
+<h1>Edit A Movie!</h1>
 
-<form action="/scary-movies" method="post">
-  <input type="hidden" name="_method" value="patch">
-
-  <input type="text" name="title" value="<%= @scary_movie.title %>" placeholder="movie title">
-  <input type="number" name="scariness_rating" value="<%= @scary_movie.scariness_rating %>" placeholder="movie scariness">
-
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-  <input type="submit" value="Submit">
-</form>
+<%= form_with model: @scary_movie do |f| %>
+  <%= f.text_field :title %>
+  <%= f.number_field :scariness_rating %>
+  <%= f.submit %>
+<% end %>
 
 <footer>scary_movies#edit</footer>
