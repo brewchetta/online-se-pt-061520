@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   patch "/scary-movies/:id", to: "scary_movies#update"
 
   # DELETE
-  delete "/scary-movies/:id", to: "scary_movies#delete"
+  delete "/scary-movies/:id", to: "scary_movies#destroy"
 
 end
