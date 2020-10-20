@@ -9,12 +9,12 @@ class ScaryMoviesController < ApplicationController
   end
 
   def new
-    @movie = ScaryMovie.new
+    @scary_movie = ScaryMovie.new
   end
 
   def create
-    @movie = ScaryMovie.new(params[:movie])
-    if @movie.save
+    @scary_movie = ScaryMovie.new(params)
+    if @scary_movie.save
       redirect_to scary_movie_path(@movie)
     else
       render :new

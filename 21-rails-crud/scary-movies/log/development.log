@@ -2062,3 +2062,233 @@ Processing by ScaryMoviesController#create as HTML
 Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2825)
 
 
+Started POST "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:43:12 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"movie"=>{"title"=>"Star Wars", "scariness_rating"=>""}, "authenticity_token"=>"IiY4aFlw5jmI02TlSgUtopxMlNfZv8lawFmMpcY++su5gZYU5ho1j0FvjE4jwmqwN/vGAJ+SHJv1KD14tmjJ1Q=="}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 4796)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/scary_movies_controller.rb:16:in `create'
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:43:16 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.7ms | Allocations: 380)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 19205)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:53:17 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 184.4ms | Allocations: 114992)
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 0.4ms | Allocations: 120895)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `title' for #<#<Class:0x00007f0a58c3c530>:0x00007f0a58c42bd8>):
+    14: 
+    15: <%= form_tag do %>
+    16: 
+    17:   <%= label_tag :movie[title], "Title" %>
+    18:   <%= text_tag :'movie[title]' %>
+    19:   <%= label_tag :movie[scariness_rating], "Scariness" %>
+    20:   <%= number_tag :'movie[scariness_rating]' %>
+  
+app/views/scary_movies/new.erb:17
+app/views/scary_movies/new.erb:15
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:53:56 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 82.0ms | Allocations: 58571)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.0ms | Allocations: 59610)
+
+
+  
+ActionView::Template::Error (undefined method `text_tag' for #<#<Class:0x00007f0a58aa1770>:0x00007f0a58ab39e8>
+Did you mean?  text_field_tag):
+    15: <%= form_tag do %>
+    16: 
+    17:   <%= label_tag :title, "Title" %>
+    18:   <%= text_tag :title %>
+    19:   <%= label_tag :scariness_rating, "Scariness" %>
+    20:   <%= number_tag :scariness_rating %>
+    21: 
+  
+app/views/scary_movies/new.erb:18
+app/views/scary_movies/new.erb:15
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:54:04 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 93.2ms | Allocations: 58725)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.0ms | Allocations: 59732)
+
+
+  
+ActionView::Template::Error (undefined method `number_tag' for #<#<Class:0x00007f0a58c085c8>:0x00007f0a58c169e8>
+Did you mean?  number_field_tag):
+    17:   <%= label_tag :title, "Title" %>
+    18:   <%= text_field_tag :title %>
+    19:   <%= label_tag :scariness_rating, "Scariness" %>
+    20:   <%= number_tag :scariness_rating %>
+    21: 
+    22: <% end %>
+    23: 
+  
+app/views/scary_movies/new.erb:20
+app/views/scary_movies/new.erb:15
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:54:11 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.1ms | Allocations: 694)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5361)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:54:34 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.0ms | Allocations: 737)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3371)
+
+
+Started POST "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:54:36 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"KmwRh0Bj3oSCrIrk81F2osAUw+IWFJL02fzqxQAvR0wLUI8/Dr3BI9YpTAYqK5sFbiUm4bEr3f9VRhF9fLjN+g==", "title"=>"Raaar", "scariness_rating"=>"10", "commit"=>"Submit"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 643)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: movie):
+  
+app/controllers/scary_movies_controller.rb:16:in `create'
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:59:08 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 114.0ms | Allocations: 61954)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.0ms | Allocations: 62953)
+
+
+  
+ActionView::Template::Error (undefined method `text' for #<ActionView::Helpers::FormBuilder:0x00007f0a5982c7c8>):
+    25: <%= form_for @movie do |f| %>
+    26: 
+    27:   <%= f.label :title %>
+    28:   <%= f.text :title %>
+    29:   <%= f.label :scariness_rating %>
+    30:   <%= f.number :scariness_rating %>
+    31:   <%= f.submit %>
+  
+app/views/scary_movies/new.erb:28
+app/views/scary_movies/new.erb:25
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:59:24 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 3.7ms | Allocations: 1938)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4570)
+
+
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 12:59:44 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 3.0ms | Allocations: 1573)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4198)
+
+
+Started POST "/scary-movies/new" for 127.0.0.1 at 2020-10-20 13:00:04 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"iAxNLBzaUbveOlfEWgf3LuqFl74jdzA0NxFLA89NrJ6pMNOUUgROHIq/kSaDfRqJRLRyvYRIfz+7q7C7s9omKA==", "scary_movie"=>{"title"=>"American Psycho", "scariness_rating"=>"7"}, "commit"=>"Create Scary movie"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 645)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: movie):
+  
+app/controllers/scary_movies_controller.rb:16:in `create'
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 13:18:55 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 2.9ms | Allocations: 1197)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <!-- <form action="/scary-movies/new" method="post">
+    4:   <label for="title">Title:</label>
+    5:   <input type="text" name="title" value="<%= @movie.title %>">
+    6: 
+    7:   <label for="scariness_rating">Scariness:</label>
+    8:   <input type="number" name="scariness_rating" value="<%= @movie.scariness_rating %>">
+  
+app/views/scary_movies/new.erb:5
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 13:19:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.9ms | Allocations: 1240)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms | Allocations: 5504)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <!-- <form action="/scary-movies/new" method="post">
+    4:   <label for="title">Title:</label>
+    5:   <input type="text" name="title" value="<%= @movie.title %>">
+    6: 
+    7:   <label for="scariness_rating">Scariness:</label>
+    8:   <input type="number" name="scariness_rating" value="<%= @movie.scariness_rating %>">
+  
+app/views/scary_movies/new.erb:5
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 13:19:40 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.0ms | Allocations: 1632)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2629)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <!-- <form action="/scary-movies/new" method="post">
+    4:   <label for="title">Title:</label>
+    5:   <input type="text" name="title" value="<%= @movie.title %>">
+    6: 
+    7:   <label for="scariness_rating">Scariness:</label>
+    8:   <input type="number" name="scariness_rating" value="<%= @movie.scariness_rating %>">
+  
+app/views/scary_movies/new.erb:5
+Started GET "/scary-movies/new" for 127.0.0.1 at 2020-10-20 13:19:55 -0400
+Processing by ScaryMoviesController#new as HTML
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 1.9ms | Allocations: 2004)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4635)
+
+
+Started POST "/scary-movies/new" for 127.0.0.1 at 2020-10-20 13:20:04 -0400
+Processing by ScaryMoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"n6RDSMHFeUZe+jZoKc3jyQLEW7qa9G79VtXzAWGwcMe+mN3wjxtm4Qp/8Irwtw5urPW+uT3LIfbabwi5HSf6cQ==", "scary_movie"=>{"title"=>"Godzilla", "scariness_rating"=>"4"}, "commit"=>"Create Scary movie"}
+  Rendering scary_movies/new.erb within layouts/application
+  Rendered scary_movies/new.erb within layouts/application (Duration: 0.8ms | Allocations: 1229)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1694)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <!-- <form action="/scary-movies/new" method="post">
+    4:   <label for="title">Title:</label>
+    5:   <input type="text" name="title" value="<%= @scary_movie.title %>">
+    6: 
+    7:   <label for="scariness_rating">Scariness:</label>
+    8:   <input type="number" name="scariness_rating" value="<%= @scary_movie.scariness_rating %>">
+  
+app/views/scary_movies/new.erb:5
+app/controllers/scary_movies_controller.rb:20:in `create'
