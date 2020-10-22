@@ -1,0 +1,7 @@
+<h1>Sandwiches</h1>
+
+<% @sandwiches.each do |sandwich| %>
+
+  <%= link_to image_tag(sandwich.img_url, class: "sandwich-thumbnail"), sandwich_path(sandwich) %>
+
+<% end %>

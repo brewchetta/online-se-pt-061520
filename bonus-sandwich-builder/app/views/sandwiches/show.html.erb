@@ -1,0 +1,11 @@
+<h1><%= @sandwich.name %></h1>
+
+<h2>$<%= @sandwich.price %>.99 USD</h2>
+
+<p><%= @sandwich.description %></p>
+
+<img class="sandwich-pic" src="<%= @sandwich.img_url %>" alt="">
+
+<br>
+
+<%= link_to "edit", edit_sandwich_path(@sandwich) %>

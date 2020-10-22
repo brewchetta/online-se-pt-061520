@@ -1,0 +1,16 @@
+<h1>Make A Sandwich</h1>
+
+<%= form_with model: @sandwich do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :price %>
+  <%= form.number_field :price %>
+  <br>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  <br>
+  <%= form.label :img_url, "Image URL" %>
+  <%= form.text_field :img_url %>
+  <%= form.submit %>
+<% end %>

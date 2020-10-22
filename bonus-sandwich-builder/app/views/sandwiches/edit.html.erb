@@ -1,0 +1,29 @@
+<h1>Edit <%= @sandwich.name %></h1>
+
+<%= form_with model: @sandwich do |form| %>
+  <%= form.label :name %>
+  <br>
+  <%= form.text_field :name %>
+  <br>
+  <br>
+  <%= form.label :price %>
+  <br>
+  <%= form.number_field :price %>
+  <br>
+  <br>
+  <%= form.label :description %>
+  <br>
+  <%= form.text_area :description %>
+  <br>
+  <br>
+  <%= form.label :img_url, "Image URL" %>
+  <br>
+  <%= form.text_field :img_url %>
+  <br>
+  <br>
+  <%= form.submit %>
+<% end %>
+
+<br>
+
+<%= button_to "DELETE SANDWICH", sandwich_path(@sandwich), method: :delete, data: {confirm: "Do you want to lose this sandwich FOREVER?"} %>
