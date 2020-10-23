@@ -1,103 +1,125 @@
-# Rails Validations
+# Rails Associations and Nested Forms
 
-## What Are Validations?
+Building out Rails associations will be trickier than previously in Sinatra. For one, the associations you're expected to build will be more complex. Secondly, we'll need a way to associate certain information in the views themselves.
 
-Validations happen whenever we call `.create`, `.update`, or `.save` (this includes variants like `.create!`)
+## Has Many Through
 
-If an instance of a model doesn't pass its validations, that instance isn't persisted in the database and errors get added to it. If we have a `@scary_movie` that doesn't pass its validations for a scariness_rating, we can call `@scary_movie.errors.full_messages` to see an array of messages informing us why those validations failed.
+As a refresher, in any association the foreign key needs to be on anything that `belongs_to` another model. First we added that foreign key as a column in our database. If we have `users` and they have many `reviews` then our review would have a `user_id` column. From there we would give the user model `has_many :reviews` and the review model `belongs_to :user`.
 
-This is most useful for displaying information to the user through things like flash messages or error partials (we'll get to those in a later discussion).
+For a many to many relationship, we need to use a join table. For example a many to many relationship between `users` and `scary_movies` could happen through `reviews`. The join table would need a foreign key for ever model its joining, in this case `user_id` and `scary_movie_id`.
 
-## Building Basic Validations
-
-In order to build basic validations, we just need syntax similar to this in a model:
-
-```
-validates :name, presence: :true
-validates :name, uniqueness: :true
-```
-
-There are a wide variety of validations and for a more comprehensive list, check out the documentation on the [Rails ActiveRecord website](https://guides.rubyonrails.org/active_record_validations.html)
-
-## More Advanced Validations
-
-There are a few advanced validations we can utilize.
-
-### Confirmation
-
-If we want to confirm something, for example include a confirmation when someone's putting in a password, we can use the confirmation validator:
+From there, our models would look like:
 
 ```
 class User < ApplicationRecord
-  validates :password, confirmation: true
+  has_many :reviews, dependent: :destroy
+  has_many scary_movies, through: :reviews
+end
+
+class Review < ApplicationRecord
+  belongs_to :user
+  belongs_to :scary_movie
+end
+
+class ScaryMovie < ApplicationRecord
+  has_many :reviews, dependent: :destroy
+  has_many :users, through: :reviews
 end
 ```
 
+If we declared a variable `@user` that was an instance of a user, we could then call `@user.reviews` and `@user.scary_movies` thanks to the association.
+
+## Creating the Association Through Collection Select
+
+[Documentation](https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
+
+In order to associate a review with our user, we can still utilize the current user. However, we need a way to associate reviews with a specific movie. To do that, we can use the Rails helper `collection_select`.
+
+A form with `collection_select` might be formatted like so:
+
 ```
-<%= text_field :person, :password %>
-<%= text_field :person, :password_confirmation %>
+<h1>Create A New Review</h1>
+
+<%= form_with model: @review do |f| %>
+  <%= f.label :scary_movie_id, "Which Movie Would You Like To Review?" %>
+  <%= f.collection_select(:scary_movie_id, ScaryMovie.all, :id, :title) %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+<% end %>
 ```
 
-This would make sure that the password and password confirmation are both the same when it validates them.
+### Breaking It Down
 
-### Format
+The line in question is `<%= f.collection_select(:scary_movie_id, ScaryMovie.all, :id, :title) %>`. There's a lot going on here so let's break it down.
 
-There's a way to make sure our inputs are formatted in a specific way. For example, if we wanted to make sure someone had a properly formatted email we could validate it this way:
+The `f.collection_select` associates this select with our form.
+
+The first argument, `scary_movie_id` determines what column we're trying to fill in our new `@review`.
+
+`ScaryMovie.all` is the list of options we want to include for our select, in this case every scary movie. If we wanted to limit the options available to especially scary movies, we could do something like `ScaryMovie.all.select{ |movie| movie.scariness_rating > 5 }`
+
+The `:id` determines what releveant information we're grabbing from our scary movie to fill in `:scary_movie_id`. Since we want to fill in the foreign key with our scary movie's primary key, this is what we'll use.
+
+The `:title` is what the option will display to the user. We want our scary movie titles to be shown in the dropdown for our select.
+
+### Additional Options
+
+If we wanted our scary movie selector to have a prompt, we could add an additional option:
+
+`<%= f.collection_select(:scary_movie_id, ScaryMovie.all, :id, :title, {prompt: true}) %>`
+
+You can also explicitly pass in a prompt:
+
+`<%= f.collection_select(:scary_movie_id, ScaryMovie.all, :id, :title, { prompt: "Which movie would you like to review?" }) %>`
+
+## Moving Forward
+
+From here we'd still need to associate our `current_user` to the review, however since we can get our user without a dropdown, we can associate them directly in the reviews controller:
 
 ```
-class user < ApplicationRecord
-  validates :email, format: { with: /\S+@\S+\.\S+/, message: "must be a valid email, for example 'chett@chett.net'" }
+def create
+  @review = Review.new(review_params)
+  @review.user = current_user
+  @review.save
 end
 ```
 
-We can change the message to be whatever we want, the `with:` most often refers to regex.
+Our controller would probably have some additional logic to make sure it passes validations, but this is essentially what we could do to make an association between the current user and a movie.
 
-### Length
+*BONUS: If we wanted to make sure our user doesn't already have a review for that movie, how could we go about making a validation for that? A custom validation may be in order or there's a special way we can utilize `validates_uniqueness_of` as well!*
 
-We can validate the length of certain things, for example enforcing a password length:
+## Nested Forms
 
-```
-class User < ApplicationRecord
-  validates :username, length: { minimum: 5, maximum: 20 }
-end
-```
-
-This would enforce a length for usernames where the minimum is 5 characters and the maximum is 20. We can also utilize a range: `length: { in: 5..20 }`
-
-## Custom Validations
-
-We can build our own custom validations as well! There are multiple ways to do this and the Rails site has examples of custom validations. That being said, we can build them directly into a model:
+If we want to instead create a movie rather than select one, we'd need to utilize a nested form. Our new form might look like this:
 
 ```
-class User < ApplicationRecord
-  validate :username_must_be_chett
+<h1>Create A New Review</h1>
 
-  def username_must_be_chett
-    if !username == "chett"
-      errors.add(:username, "This username must be chett!")
-    end
-  end
-end
-```
+<%= form_with url: scary_movies_path do |f| %>
 
-You can find more information about this pattern in the [Rails ActiveRecord Validations: Custom Methods Section](https://guides.rubyonrails.org/active_record_validations.html#custom-methods)
+  <h3>Add a new movie</h3>
 
-## Displaying Errors
+  <%= f.fields_for :scary_movie, @scary_movie do |movie| %>
+    <%= movie.label :title %>
+    <%= movie.text_field :title %>
 
-There are several ways to display errors, the easiest being through flash messages. If something fails its validation, we can add its errors to an array like so:
-
-`flash[:errors] = @user.errors.full_messages`
-
-Then in the layout or on the page we display those error messages:
-
-```
-<div>
-  <% flash[:errors]&.each do |error| %>
-    <p><%= error %></p>
+    <%= movie.label :scariness_rating %>
+    <%= movie.number_field :scariness_rating %>
   <% end %>
-</div>
+
+  <h3>What do you have to say about it?</h3>
+
+  <%= f.fields_for :review, @review do |review| %>
+    <%= review.label :content %>
+    <%= review.text_area :content %><br>
+  <% end %>
+
+  <%= f.submit %>
+
+<% end %>
 ```
 
-We can add additional classes / ids and styling so that our div displays in a pretty format.
-
-*BONUS: What is the `&` doing at the end of `flash[:errors]`? Check out this [stack overflow](https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby) for the answer!*
+The `fields_for` allow use to subdivide for different models that we can then fill out. Our params would get passed in as `params[:scary_movie]` and `params[:review]` which we can use for specialized strong params.

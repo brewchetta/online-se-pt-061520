@@ -6,10 +6,12 @@ class ScaryMoviesController < ApplicationController
   end
 
   def new
+    @user = User.new
     @scary_movie = ScaryMovie.new
   end
 
   def create
+    byebug
     @scary_movie = ScaryMovie.new(scary_movie_params)
     if @scary_movie.save
       redirect_to scary_movie_path(@scary_movie)
