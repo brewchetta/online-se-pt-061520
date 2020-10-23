@@ -12,7 +12,7 @@ From there, our models would look like:
 
 ```
 class User < ApplicationRecord
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many scary_movies, through: :reviews
 end
 
@@ -22,7 +22,7 @@ class Review < ApplicationRecord
 end
 
 class ScaryMovie < ApplicationRecord
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :users, through: :reviews
 end
 ```
@@ -90,3 +90,36 @@ end
 Our controller would probably have some additional logic to make sure it passes validations, but this is essentially what we could do to make an association between the current user and a movie.
 
 *BONUS: If we wanted to make sure our user doesn't already have a review for that movie, how could we go about making a validation for that? A custom validation may be in order or there's a special way we can utilize `validates_uniqueness_of` as well!*
+
+## Nested Forms
+
+If we want to instead create a movie rather than select one, we'd need to utilize a nested form. Our new form might look like this:
+
+```
+<h1>Create A New Review</h1>
+
+<%= form_with do |f| %>
+
+  <h3>Add a new movie</h3>
+
+  <%= f.fields_for :scary_movie, @scary_movie do |movie| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :scariness_rating %>
+    <%= f.number_field :scariness_rating %>
+  <% end %>
+
+  <h3>What do you have to say about it?</h3>
+
+  <%= f.fields_for :review, @review do |review| %>
+    <%= review.label :content %>
+    <%= review.text_area :content %><br>
+  <% end %>
+
+  <%= f.submit %>
+
+<% end %>
+```
+
+The `fields_for` allow use to subdivide for different models that we can then fill out. Our params would get passed in as `params[:scary_movie]` and `params[:review]` which we can use for specialized strong params.
