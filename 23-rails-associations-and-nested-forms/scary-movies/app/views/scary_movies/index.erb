@@ -1,0 +1,14 @@
+<h1>All The Scary Movies</h1>
+
+<% @scary_movies.each do |movie| %>
+
+  <!-- <a href="/scary-movies/<%= movie.id %>"><%= movie.title %></a> -->
+  <%= link_to movie.title, scary_movie_path(movie) %>
+
+  <br><br>
+
+<% end %>
+
+<%= link_to "-- Add a Movie --", new_scary_movie_path, method: :get %>
+
+<footer>scary_movies#index</footer>

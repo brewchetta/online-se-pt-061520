@@ -1,0 +1,34 @@
+body {
+  background-image: url("https://cdn.guff.com/site_1/media/27000/26848/items/50f5cec6326a33c1f50b2a90.jpg");
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  background-color: black;
+  color: red;
+  padding: 0.3em;
+  border-radius: 5px;
+}
+
+p {
+  background-color: black;
+  color: white;
+}
+
+a {
+  color: red;
+  text-decoration: overline;
+}
+
+footer {
+  background-color: black;
+  bottom: 0;
+  color: white;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+
+label {
+  color: white;
+}
