@@ -64,6 +64,40 @@ end
 
 This would enforce a length for usernames where the minimum is 5 characters and the maximum is 20. We can also utilize a range: `length: { in: 5..20 }`
 
-## Custom validations
+## Custom Validations
 
-We can build our own custom validations as well!
+We can build our own custom validations as well! There are multiple ways to do this and the Rails site has examples of custom validations. That being said, we can build them directly into a model:
+
+```
+class User < ApplicationRecord
+  validate :username_must_be_chett
+
+  def username_must_be_chett
+    if !username == "chett"
+      errors.add(:username, "This username must be chett!")
+    end
+  end
+end
+```
+
+You can find more information about this pattern in the [Rails ActiveRecord Validations: Custom Methods Section](https://guides.rubyonrails.org/active_record_validations.html#custom-methods)
+
+## Displaying Errors
+
+There are several ways to display errors, the easiest being through flash messages. If something fails its validation, we can add its errors to an array like so:
+
+`flash[:errors] = @user.errors.full_messages`
+
+Then in the layout or on the page we display those error messages:
+
+```
+<div>
+  <% flash[:errors]&.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+</div>
+```
+
+We can add additional classes / ids and styling so that our div displays in a pretty format.
+
+*BONUS: What is the `&` doing at the end of `flash[:errors]`? Check out this [stack overflow](https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby) for the answer!*
