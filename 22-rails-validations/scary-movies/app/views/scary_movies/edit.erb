@@ -1,0 +1,9 @@
+<h1>Edit <%= @scary_movie.title %></h1>
+
+<%= form_for @scary_movie do |form| %>
+  <%= form.text_field :title %>
+  <%= form.number_field :scariness_rating %>
+  <%= form.submit %>
+<% end %>
+
+<footer>scary_movies#edit</footer>

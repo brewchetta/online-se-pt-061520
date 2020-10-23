@@ -1,0 +1,9 @@
+*.db
+*.sqlite
+*.sqlite3
+tmp
+.byebug_history
+*.lock
+node_modules
+log
+storage
