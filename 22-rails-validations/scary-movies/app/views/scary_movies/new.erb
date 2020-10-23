@@ -1,27 +1,11 @@
 <h1>Add A Movie!</h1>
 
-<%= form_tag scary_movies_path do %>
-  <%= label_tag "Title" %>
-  <%= text_field_tag "scary_movies[title]" %>
-  <%= label_tag "Scariness Rating" %>
-  <%= number_field_tag "scary_movies[scariness_rating]" %>
-  <%= submit_tag "Add Your Movie" %>
-<% end %>
-
-<%= form_for @scary_movie do |f| %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
-  <%= f.label "Scariness Rating" %>
-  <%= f.number_field :scariness_rating %>
-  <%= f.submit "Add your movie" %>
-<% end %>
-
 <%= form_with model: @scary_movie do |form| %>
-<%= form.label "Title" %>
-<%= form.text_field :title %>
-<%= form.label "Scariness Rating" %>
-<%= form.number_field :scariness_rating %>
-<%= form.submit "Add Your Movie" %>
+  <%= form.label "Title" %>
+  <%= form.text_field :title %>
+  <%= form.label "Scariness Rating" %>
+  <%= form.number_field :scariness_rating %>
+  <%= form.submit "Add Your Movie" %>
 <% end %>
 
 <footer>scary_movies#new</footer>
