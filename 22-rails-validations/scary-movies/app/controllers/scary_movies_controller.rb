@@ -19,8 +19,11 @@ class ScaryMoviesController < ApplicationController
   end
 
   def update
-    @scary_movie.update(scary_movie_params)
-    redirect_to scary_movie_path(@scary_movie)
+    if @scary_movie.update(scary_movie_params)
+      redirect_to scary_movie_path(@scary_movie)
+    else
+      redirect_to edit_scary_movie_path(@scary_movie)
+    end
   end
 
   def destroy
@@ -32,6 +35,7 @@ class ScaryMoviesController < ApplicationController
 
   def find_movie
     @scary_movie = ScaryMovie.find_by(id: params[:id])
+    redirect_to scary_movies_path if !@scary_movie
   end
 
   def scary_movie_params
