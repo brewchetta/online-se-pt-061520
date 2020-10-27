@@ -1,11 +1,17 @@
 <h1>Add A Movie!</h1>
 
 <%= form_with model: @scary_movie do |form| %>
+
   <%= form.label "Title" %>
   <%= form.text_field :title %>
+  <br>
+
   <%= form.label "Scariness Rating" %>
   <%= form.number_field :scariness_rating %>
+  <br>
+
   <%= form.submit "Add Your Movie" %>
+
 <% end %>
 
 <footer>scary_movies#new</footer>

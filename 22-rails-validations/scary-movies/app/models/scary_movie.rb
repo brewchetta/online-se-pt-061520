@@ -1,3 +1,4 @@
 class ScaryMovie < ApplicationRecord
-  validates :title, :scariness_rating, presence: :true
+  validates :title, presence: :true, uniqueness: :true
+  validates :scariness_rating, presence: :true
 end

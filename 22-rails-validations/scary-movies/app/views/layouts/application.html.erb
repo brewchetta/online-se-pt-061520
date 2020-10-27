@@ -13,7 +13,7 @@
     <%# In case we want to include error messages later %>
     <% if @errors %>
       <ul>
-      <% @errors.each do |err| %>
+      <% flash[:errors].each do |err| %>
         <li><%= err %></li>
       <% end %>
       </ul>
