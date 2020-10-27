@@ -4,6 +4,8 @@
 
 Validations happen whenever we call `.create`, `.update`, or `.save` (this includes variants like `.create!`)
 
+To see if a newly created or edited model is valid we can call `.valid?` on it.
+
 If an instance of a model doesn't pass its validations, that instance isn't persisted in the database and errors get added to it. If we have a `@scary_movie` that doesn't pass its validations for a scariness_rating, we can call `@scary_movie.errors.full_messages` to see an array of messages informing us why those validations failed.
 
 This is most useful for displaying information to the user through things like flash messages or error partials (we'll get to those in a later discussion).
