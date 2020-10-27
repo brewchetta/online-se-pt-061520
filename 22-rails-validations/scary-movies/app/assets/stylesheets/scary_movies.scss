@@ -32,3 +32,13 @@ footer {
 label {
   color: white;
 }
+
+.flash-message {
+  border: solid green 2px;
+  color: green;
+}
+
+.flash-error {
+  border: solid red 2px;
+  color: red;
+}

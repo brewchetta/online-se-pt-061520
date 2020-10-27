@@ -14,7 +14,7 @@ class ScaryMoviesController < ApplicationController
     if @scary_movie.save
       redirect_to scary_movie_path(@scary_movie)
     else
-      render :new
+      redirect_to new_scary_movie_path
     end
   end
 

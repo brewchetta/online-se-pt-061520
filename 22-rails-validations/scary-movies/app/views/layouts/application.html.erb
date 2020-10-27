@@ -10,15 +10,6 @@
 
   <body>
 
-    <%# In case we want to include error messages later %>
-    <% if @errors %>
-      <ul>
-      <% flash[:errors].each do |err| %>
-        <li><%= err %></li>
-      <% end %>
-      </ul>
-    <% end %>
-
     <%= yield %>
 
   </body>
