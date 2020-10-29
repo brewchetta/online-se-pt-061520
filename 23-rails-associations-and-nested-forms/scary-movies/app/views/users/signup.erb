@@ -1,4 +1,4 @@
-<h1>Sign Up For Scary Movies</h1>
+<h1>Sign Up</h1>
 
 <%= render "layouts/errors", errors: @user.errors.full_messages %>
 
@@ -16,8 +16,9 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <%= f.submit %>
+  <%= f.submit "Sign Up" %>
 
 <% end %>
 
+<br>
 <%= link_to "or...Login", login_path %>
