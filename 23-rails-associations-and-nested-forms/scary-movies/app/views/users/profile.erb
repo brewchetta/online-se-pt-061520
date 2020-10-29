@@ -5,5 +5,7 @@
 <h3>Your movies watch list:</h3>
 
 <ul>
-  <%# I guess something goes here later... %>
+  <% @user.scary_movies.each do |sm| %>
+    <li><%= link_to sm.title, scary_movie_path(sm) %></li>
+  <% end %>
 </ul>

@@ -10,6 +10,10 @@ class ScaryMoviesController < ApplicationController
     @scary_movie = ScaryMovie.new
   end
 
+  def show
+    @watch_list_item = WatchListItem.new
+  end
+
   def create
     byebug
     @scary_movie = ScaryMovie.new(scary_movie_params)

@@ -1,0 +1,6 @@
+<%= form_with model: @watch_list_item do |f| %>
+
+  <%= f.collection_select :scary_movie_id, ScaryMovie.all, :id, :title %>
+  <%= f.submit %>
+
+<% end %>

@@ -3,6 +3,8 @@
 
 <%= button_to "Murder movie", scary_movie_path(@scary_movie), method: :delete %>
 
+<%= button_to "Add to Watch List", watch_list_items_path, params: {watch_list_item: { scary_movie_id: @scary_movie.id } } %>
+
 <%= link_to "Back to Index", scary_movies_path %>
 
 <footer>scary_movies#show</footer>
