@@ -1,6 +1,8 @@
 <h1>Sign Up For Scary Movies</h1>
 
-<%= form_with model: user do |form| %>
+<%= render "layouts/errors", errors: @user.errors.full_messages %>
+
+<%= form_with model: @user, url: signup_path do |f| %>
 
   <%= f.label :username %>
   <%= f.text_field :username %>
@@ -17,3 +19,5 @@
   <%= f.submit %>
 
 <% end %>
+
+<%= link_to "or...Login", login_path %>

@@ -1,5 +1,7 @@
 <h1>All The Scary Movies</h1>
 
+<%= link_to "Sign Out", logout_path, method: :delete %>
+
 <% @scary_movies.each do |movie| %>
 
   <!-- <a href="/scary-movies/<%= movie.id %>"><%= movie.title %></a> -->

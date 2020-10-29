@@ -10,14 +10,11 @@
 
   <body>
 
-    <%# In case we want to include error messages later %>
-    <% if @errors %>
-      <ul>
-      <% @errors.each do |err| %>
-        <li><%= err %></li>
-      <% end %>
-      </ul>
-    <% end %>
+    <%# if session[:user_id] %>
+      <%= button_to "Logout", logout_path, method: :delete, id: "signout-button" %>
+    <%# end %>
+
+    <%= render "layouts/errors", errors: flash[:errors] %>
 
     <%= yield %>
 

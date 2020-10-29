@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+  root "sessions#login"
+
   resources :scary_movies
 
-  get "/login", to: "users#login", as: :login
-  post "/login", to: "users#login_post"
+  get "/login", to: "sessions#login", as: :login
+  post "/login", to: "sessions#login_post"
 
-  get "/signup", to: "users#signup", as: :signup
+  get "/signup", to: "users#new", as: :signup
   post "/signup", to: 'users#create'
 
-  delete "/logout", to: "users#logout", as: :logout
+  delete "/logout", to: "sessions#logout", as: :logout
 
-  get "/profile", to: "users#profile", as: :profile
+  get "/profile", to: "users#profile", as: :user
 end

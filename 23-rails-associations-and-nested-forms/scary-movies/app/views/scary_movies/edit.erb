@@ -1,5 +1,7 @@
 <h1>Edit <%= @scary_movie.title %></h1>
 
+<%= render "layouts/errors", errors: @scary_movie.errors.full_messages %>
+
 <%= form_for @scary_movie do |form| %>
   <%= form.text_field :title %>
   <%= form.number_field :scariness_rating %>

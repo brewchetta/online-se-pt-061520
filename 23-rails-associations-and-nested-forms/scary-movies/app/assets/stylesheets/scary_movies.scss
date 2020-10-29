@@ -32,3 +32,25 @@ footer {
 label {
   color: white;
 }
+
+#errors-container {
+
+  li {
+    border-top: solid black 3px;
+    border-bottom: solid black 3px;
+    background: red;
+    display: inline-block;
+    padding: 0 1em 0 1em;
+  }
+
+}
+
+#signout-button {
+  background: black;
+  border: none;
+  color: red;
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+  z-index: 1;
+}
