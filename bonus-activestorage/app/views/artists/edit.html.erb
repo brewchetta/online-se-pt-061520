@@ -1,0 +1,16 @@
+<h1>Edit Artist</h1>
+
+<%= form_with model: @artist do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :birth_year %>
+  <%= f.text_field :birth_year %>
+
+  <%= f.submit %>
+
+<% end %>
