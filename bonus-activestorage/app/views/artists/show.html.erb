@@ -1,5 +1,19 @@
 <h1><%= "#{@artist.first_name} #{@artist.last_name}" %></h1>
 
-<p><%= @artist.birth_year %></p>
+<p>Born <%= @artist.birth_year %></p>
 
-<%= image_tag '#', alt: "An image of the artist should go here..." %>
+<%= link_to "Edit", edit_artist_path(@artist) %>
+
+<%= image_tag @artist.self_portrait %>
+
+<% @artist.paintings.each do |img| %>
+
+  <%= image_tag img %>
+
+<% end %>
+
+<%= form_with model: @artist, url: submit_painting_path  do |f| %>
+  <%= f.hidden_field :id %>
+  <%= f.file_field :paintings, multiple: true %>
+  <%= f.submit "Add a Painting" %>
+<% end %>

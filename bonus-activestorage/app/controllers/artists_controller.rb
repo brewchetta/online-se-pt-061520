@@ -26,10 +26,23 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def upload_painting
+    artist = Artist.find(params[:artist][:id])
+    params[:artist][:paintings].each do |painting|
+      artist.paintings.attach(painting)
+    end
+    byebug
+    redirect_to artist_path(artist)
+  end
+
   private
 
   def artist_params
-    params.require(:artist).permit(:first_name, :last_name, :birth_year)
+    params.require(:artist).permit(:first_name, :last_name, :birth_year, :self_portrait)
+  end
+
+  def painting_params
+    params.require(:artist).permit(:id, paintings: [])
   end
 
   def find_artist
