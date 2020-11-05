@@ -1,0 +1,35 @@
+<span>
+  <%= flash[:message] %>
+</span>
+
+<nav>
+  <%= link_to "Boardgames", boardgames_path %>
+  <%= link_to "Add Boardgame", new_boardgame_path %>
+  <%= link_to "Add Category", new_category_path %>
+</nav>
+
+<h1><%= @boardgame.name %></h1>
+
+<%= link_to "Edit", edit_boardgame_path(@boardgame) %>
+
+<%= link_to "Remove", boardgame_path(@boardgame), method: :delete %>
+
+<p><%= @boardgame.minimum_age %> and up</p>
+
+<p><%= @boardgame.min_players %> - <%= @boardgame.max_players %> players</p>
+
+<h3>Categories: </h3>
+<ul class="categories-list">
+  <% @boardgame.categories.each do |c| %>
+    <li><%= c.name %></li>
+  <% end %>
+</ul>
+
+<%= form_with model: @boardgame.boardgame_categories.new, url: add_to_category_path do |form| %>
+
+  <%= form.hidden_field :boardgame_id %>
+  <%= form.collection_select :category_id, Category.all, :id, :name %>
+
+  <%= form.submit "Add Category" %>
+
+<% end %>

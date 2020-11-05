@@ -1,0 +1,16 @@
+// Place all the styles related to the boardgames controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#boardgame-body {
+  border: solid pink 2px;
+
+  a {
+    color: green;
+  }
+
+  h1 {
+    background: black;
+    color: white;
+  }
+}
