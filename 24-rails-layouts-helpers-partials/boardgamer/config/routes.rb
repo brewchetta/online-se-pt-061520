@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "boardgames#index"
   resources :boardgames
   resources :categories, only: [:new, :create]
 
