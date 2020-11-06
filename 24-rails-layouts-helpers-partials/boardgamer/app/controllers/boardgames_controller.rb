@@ -1,8 +1,9 @@
 class BoardgamesController < ApplicationController
   before_action :find_boardgame, only: [:show, :edit, :update, :destroy]
+  # include BoardgamesHelper
 
   def index
-    @boardgames = Boardgame.all
+    @boardgames = helpers.all_boardgames
   end
 
   def new

@@ -10,6 +10,13 @@
   </head>
 
   <body id="boardgame-body">
+
+    <nav>
+      <%= link_to "Boardgames", boardgames_path %>
+      <%= link_to "Add Boardgame", new_boardgame_path %>
+      <%= link_to "Add Category", new_category_path %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

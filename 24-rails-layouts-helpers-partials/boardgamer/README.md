@@ -1,24 +1,68 @@
-# README
+# Layouts, Partials, and Helpers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To utilize a partial:
 
-Things you may want to cover:
+```
+<%= render "form", title: "I am getting plugged as a variable into an <h1>!" %>
+```
 
-* Ruby version
+To utilize a layout first create that layout and tell your form to render with it with:
 
-* System dependencies
+```
+render :new, layout: "my_new_layout"
+```
 
-* Configuration
+You can also utilize no layout with:
 
-* Database creation
+```
+render :new, layout: false
+```
 
-* Database initialization
+To utilize a helper method, first create it in the appropriate helpers file:
 
-* How to run the test suite
+```
+module UsersHelpers
 
-* Services (job queues, cache servers, search engines, etc.)
+  def current_user
+    User.find_by_id(session[:user_id])
+  end
 
-* Deployment instructions
+end
+```
 
-* ...
+ Technically the helpers are all available to any file, this is mainly for organization. You can access helpers normally in views, for example:
+
+```
+<h1>Welcome back <%= current_user.name %></h1>
+```
+
+Inside controllers, you can pull in helpers one of two ways:
+
+```
+class SomeController < ApplicationController
+  include UsersHelpers
+
+  def index
+  if !current_user
+    redirect_to some_path
+  else
+    render :index
+  end
+
+end
+```
+
+OR
+
+```
+class SomeController < ApplicationController
+
+  def index
+  if !helpers.current_user
+    redirect_to some_path
+  else
+    render :index
+  end
+
+end
+```

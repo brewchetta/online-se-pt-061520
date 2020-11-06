@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
+  include BoardgamesHelper
+
   def new
     @category = Category.new
+    render :new, layout: "category"
   end
 
   def create
