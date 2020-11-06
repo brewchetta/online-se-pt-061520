@@ -1,14 +1,8 @@
-<nav>
-  <%= link_to "Boardgames", boardgames_path %>
-  <%= link_to "Add Boardgame", new_boardgame_path %>
-  <%= link_to "Add Category", new_category_path %>
-</nav>
-
 <h1><%= title %></h1>
 
 <%= form_with model: @boardgame do |form| %>
 
-  <%# render "partials/errors" %>
+  <%= render "partials/errors" %>
 
   <%= form.label :name %>
   <%= form.text_field :name %>
@@ -24,6 +18,10 @@
 
   <%= form.label :max_players %>
   <%= form.number_field :max_players %>
+  <br>
+
+  <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  <br>
 
   <%= form.submit %>
 

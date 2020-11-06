@@ -11,6 +11,10 @@
 
   <body>
 
+    <div id="flash-message">
+      <%= flash[:message] %>
+    </div>
+
     <nav>
       <%= link_to "Boardgames", boardgames_path %>
       <%= link_to "Add Boardgame", new_boardgame_path %>
