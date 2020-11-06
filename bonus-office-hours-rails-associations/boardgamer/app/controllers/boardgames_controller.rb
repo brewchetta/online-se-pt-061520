@@ -43,7 +43,7 @@ class BoardgamesController < ApplicationController
   end
 
   def boardgame_params
-    params.require(:boardgame).permit(:name, :min_players, :max_players, :minimum_age, category_ids: [])
+    params.require(:boardgame).permit(:name, :min_players, :max_players, :minimum_age)
   end
 
 end

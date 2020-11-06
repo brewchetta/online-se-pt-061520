@@ -15,11 +15,9 @@
   <% end %>
 </ul>
 
-<%= form_with model: @boardgame.boardgame_categories.new, url: add_to_category_path do |form| %>
-
-  <%= form.hidden_field :boardgame_id %>
-  <%= form.collection_select :category_id, Category.all, :id, :name %>
-
-  <%= form.submit "Add Category" %>
-
-<% end %>
+<h3>Reviews: </h3>
+<ul class="reviews-list">
+  <% @boardgame.reviews.each do |review| %>
+    <li><%= review.content %></li>
+  <% end %>
+</ul>

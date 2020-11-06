@@ -1,5 +1,9 @@
-<ul class="errors-list">
-  <% @boardgame&.errors.full_messages.each do |err| %>
-    <li><%= err %></li>
-  <% end %>
-</ul>
+<% if errors&.any? %>
+
+  <ul class="errors-list">
+    <% errors.each do |err| %>
+      <li><%= err %></li>
+    <% end %>
+  </ul>
+
+<% end %>
