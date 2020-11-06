@@ -10,8 +10,10 @@
 
 <h3>Categories: </h3>
 <ul class="categories-list">
-  <% @boardgame.categories.each do |c| %>
-    <li><%= c.name %></li>
+  <% @boardgame.categories.each do |category| %>
+    <li><%= category.name %>
+      <%= button_to "Remove", remove_category_path, method: :delete, params: { boardgame_id: @boardgame.id, category_id: category.id } %>
+    </li>
   <% end %>
 </ul>
 

@@ -1,1 +1,40 @@
-<%= render "partials/form", title: "Add A New Boardgame" %>
+<h1>New Boardgame</h1>
+
+<%= form_with url: boardgames_path do |form| %>
+
+  <%= render "partials/errors", errors: @boardgame&.errors&.full_messages %>
+
+  <%= form.fields_for @boardgame do |ff| %>
+
+    <%= ff.label :name %>
+    <%= ff.text_field :name %>
+
+    <%= ff.label :playtime %>
+    <%= ff.number_field :playtime %>
+
+    <%= ff.label :minimum_age %>
+    <%= ff.number_field :minimum_age %>
+
+    <%= ff.label :min_players %>
+    <%= ff.number_field :min_players %>
+
+    <%= ff.label :max_players %>
+    <%= ff.number_field :max_players %>
+    <br>
+
+    <%= ff.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+
+  <% end %>
+  <br>
+
+  <h3>Write A Review</h3>
+
+  <%= form.fields_for @review do |ff| %>
+
+    <%= ff.text_field :content %>
+
+  <% end %>
+
+  <%= form.submit "Create Boardgame" %>
+
+<% end %>
