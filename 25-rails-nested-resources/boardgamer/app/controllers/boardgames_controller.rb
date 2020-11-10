@@ -9,11 +9,13 @@ class BoardgamesController < ApplicationController
 
   def new
     @boardgame = Boardgame.new
+    @review = @boardgame.reviews.build
   end
 
   def create
     @boardgame = Boardgame.new(boardgame_params)
     if @boardgame.save
+      @review = @boardgame.reviews.create(review_params)
       flash[:message] = "#{@boardgame.name} successfully created"
       redirect_to boardgame_path(@boardgame)
     else
@@ -35,6 +37,14 @@ class BoardgamesController < ApplicationController
     redirect_to boardgames_path
   end
 
+  def remove_category
+    bgc = BoardgameCategory.find_by(boardgame_id: params[:boardgame_id], category_id: params[:category_id])
+
+    bgc.destroy
+
+    redirect_to boardgame_path(params[:boardgame_id])
+  end
+
   private
 
   def find_boardgame
@@ -43,7 +53,11 @@ class BoardgamesController < ApplicationController
   end
 
   def boardgame_params
-    params.require(:boardgame).permit(:name, :min_players, :max_players, :minimum_age, category_ids: [])
+    params.require(:boardgame).permit(:name, :min_players, :max_players, :playtime, :minimum_age, category_ids: [])
+  end
+
+  def review_params
+    params.require(:review).permit(:content)
   end
 
 end

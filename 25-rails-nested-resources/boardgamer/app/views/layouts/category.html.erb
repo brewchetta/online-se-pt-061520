@@ -11,7 +11,17 @@
 
   <body>
 
-    <h1>Wow Boardgame Categories</h1>
+    <div id="flash-message">
+      <p><%= flash[:message] %></p>
+    </div>
+
+    <nav>
+      <%= link_to "Boardgames", boardgames_path %>
+      <%= link_to "Add Boardgame", new_boardgame_path %>
+      <%= link_to "Add Category", new_category_path %>
+    </nav>
+
+    <h1>Make a New Category</h1>
 
     <%= yield %>
   </body>

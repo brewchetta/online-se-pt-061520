@@ -1,6 +1,6 @@
 <%= form_with model: @category do |form| %>
   <ul class="errors-list">
-    <%= @category&.errors.full_messages.each do |err| %>
+    <% @category&.errors.full_messages.each do |err| %>
       <li><%= err %></li>
     <% end %>
   </ul>

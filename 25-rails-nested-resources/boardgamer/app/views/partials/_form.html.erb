@@ -2,7 +2,7 @@
 
 <%= form_with model: @boardgame do |form| %>
 
-  <%= render "partials/errors" %>
+  <%= render "partials/errors", errors: @boardgame&.errors&.full_messages %>
 
   <%= form.label :name %>
   <%= form.text_field :name %>

@@ -10,16 +10,16 @@
 
 <h3>Categories: </h3>
 <ul class="categories-list">
-  <% @boardgame.categories.each do |c| %>
-    <li><%= c.name %></li>
+  <% @boardgame.categories.each do |category| %>
+    <li><%= category.name %>
+      <%= button_to "Remove", remove_category_path, method: :delete, params: { boardgame_id: @boardgame.id, category_id: category.id } %>
+    </li>
   <% end %>
 </ul>
 
-<%= form_with model: @boardgame.boardgame_categories.new, url: add_to_category_path do |form| %>
-
-  <%= form.hidden_field :boardgame_id %>
-  <%= form.collection_select :category_id, Category.all, :id, :name %>
-
-  <%= form.submit "Add Category" %>
-
-<% end %>
+<h3>Reviews: </h3>
+<ul class="reviews-list">
+  <% @boardgame.reviews.each do |review| %>
+    <li><%= review.content %></li>
+  <% end %>
+</ul>
