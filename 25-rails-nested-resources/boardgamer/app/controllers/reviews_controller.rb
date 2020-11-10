@@ -15,6 +15,19 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def index
+    @reviews = Review.all
+  end
+
+  def show
+    @review = Review.find_by_id(params[:id])
+  end
+
+  def search
+    @reviews = Review.all[0..2]
+    render :index
+  end
+
   private
 
   def review_params

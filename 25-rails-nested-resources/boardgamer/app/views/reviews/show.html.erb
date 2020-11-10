@@ -1,0 +1,8 @@
+<h2>Review for <%= @review.boardgame.name %></h2>
+
+<p><%= @review.content %></p>
+
+<%= link_to "Back to reviews", reviews_path %>
+<br>
+
+<%= link_to "Go to #{@review.boardgame.name}", boardgame_path(@review.boardgame) %>
