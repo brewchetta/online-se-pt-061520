@@ -1,131 +1,73 @@
-# Layouts, Partials, and Helpers
+# Rails Nested Resources
 
-## Partials
+## Route Scopes
 
-To utilize a partial:
-
-```
-<%= render "form", title: "I am getting plugged as a variable into an <h1>!" %>
-```
-
-You can also pull in partials from outside the current directory, for example if you had a universal partials folder:
+We can give a route a specific scope with the `scope` keyword. Different options in a scope will change how our route gets presented in different ways. For example:
 
 ```
-<%= render "partials/errors", errors: @something.errors.full_messages %>
-```
-
-## Layouts
-
-To utilize a layout first create that layout and tell your form to render with it with:
-
-```
-render :new, layout: "my_new_layout"
-```
-
-You can also utilize no layout with:
-
-```
-render :new, layout: false
-```
-
-You can also specify a layout for the entire controller by adding a line outside your actions:
-
-```
-FancyController < ApplicationController
-  layout "fancy_controller_layout"
-  
-  def index
-    # code goes here
-  end
-
+scope :boardgames do
+  resources :reviews
 end
 ```
 
-## Helpers
+This will nest the routes we've created for reviews within a boardgame scope. At first, all this really changes is how our url looks. To get to the index for reviews, we'd use this url: `localhost:300/boardgames/reviews`.
 
-To utilize a helper method, first create it in the appropriate helpers file:
+We can additionally add the `module` option when creating a scope. This makes some pretty dramatic organizational changes. An example in code:
 
 ```
-module UsersHelpers
-
-  def current_user
-    User.find_by_id(session[:user_id])
-  end
-
+scope :boardgames, module: :boardgames do
+  resources :reviews
 end
 ```
 
- Technically the helpers are all available to any file, this is mainly for organization. You can access helpers normally in views, for example:
+This will mean that everything to do with reviews gets attached to a new module called `Boardgames`. It now expects that we can find the controller files in `controllers/boardgames/reviews_controller.rb`. The controller needs to be namespaced with the module, which is to say we now rewrite it to:
 
 ```
-<h1>Welcome back <%= current_user.name %></h1>
-```
-
-Inside controllers, you can pull in helpers one of two ways:
-
-```
-class SomeController < ApplicationController
-  include UsersHelpers
-
-  def index
-  if !current_user
-    redirect_to some_path
-  else
-    render :index
-  end
-
+class Boardgames::ReviewsController < ApplicationController
+  #code here
 end
 ```
 
-OR
+Additionally, all of our views are expected to be inside of `views/boardgames/reviews`. You get the idea.
+
+At this point, the routes have been changed but the route helpers haven't. We can change the names of the route helpers with the `as` option:
 
 ```
-class SomeController < ApplicationController
-
-  def index
-  if !helpers.current_user
-    redirect_to some_path
-  else
-    render :index
-  end
-
+scope :boardgames, module: :boardgames, as: 'boardgames' do
+  resources :reviews
 end
 ```
 
-## Stylesheets
+This will prepend `boardgames` to all of the related path helpers. For example, `reviews_path` now becomes `boardgame_reviews_path`.
 
-There's an easy way to include a specific css file and a hard way to include a css file.
+## Namespace
 
-For an easy way to include a single file is to create a new .css file in stylesheets which you can then link to directly in the stylesheet_link_tag. The big issue here is you'll have to use a single file for each layout since if you utilize application.css it'll pull in all the files at the same time. Additionally, you'll have to tweak the rails configuration if you'd like anything other than a .css file, for example if you wanted to use sass.
+A nice shortcut to include all of this work is to utilize the `namespace` macro. It works similar to `scope` but automatically draws in and intuits all the options by default.
 
-A second option is that you can change the application.css manifest file to only include specific files and probably rename it so it's specific to boardgames. An example of our newly renamed boardgame_styles.csswould be:
-
-```
-/*
- *= require boardgames
- */
-```
-
-This would draw in boardgames.scss . This is great because we can just add additional lines to require more stylesheets if we want to.
-
-You could then build an additional manifest called category_styles.css and inside of it write out:
+An example of a namespace doing what we did earlier would be:
 
 ```
-/*
- *= require categories
- */
+namespace :boardgames do
+  resources :reviews
+end
 ```
 
-Inside the layouts you'd replace the stylesheet_link_tags like so:
+This will change the urls, the path helpers, and nest the directory structures that we'll need to include to make our app work. Reviews will have to inherit from the `Boardgames` module as well.
 
-boardgames.html.erb:
+## Nested Resources
+
+What if we have two models and we want to create nested routes to show one's dependency on the other? Rails has a solution for that, and while it's easy to implement, it can have far reaching consequences.
+
 ```
-<%= stylesheet_link_tag 'boardgame_styles', media: 'all', 'data-turbolinks-track': 'reload' %>
+resources :boardgames do
+  resources :reviews
+end
 ```
 
-categories.html.erb:
-```
-<%= stylesheet_link_tag 'category_styles', media: 'all', 'data-turbolinks-track': 'reload' %>
-```
+This automatically nests the routes for reviews directly underneath boardgames. If we wanted to go to a review show page, we'd need to follow a url like this: `/boardgames/3/reviews/4`.
 
-For additional information, check out this resource on the asset pipeline (worth a read even if you're not interested in styling): https://guides.rubyonrails.org/asset_pipeline.html
+Our dynamic url now takes in two params, a `:boardgame_id` and an `:id`. How we utilize the `params[:boardgame_id]` is up to us and what we do in the controller. However, it can allow for a few easier changes in our controllers. For example, if we went to `/boardgames/3/reviews/new` we'd immediately know which boardgame we were reviewing (it's right there in the url!).
+
+Since we've changed the url, our path helper also changes. Instead of just `new_review_path`, we instead have the longer `new_boardgame_review_path(@boardgame)`. We have to pass in something for the `:boardgame_id` or else our route will complain that it doesn't have one.
+
+With path helpers, the order we now pass our id's is determined by the url. For the show page, remember that our new url is: `/boardgames/:boardgame_id/reviews/:id`. To make our path helper work, we do: `boardgame_review_path(@boardgame, @review)`. We pass in the boardgame first because its `id` gets filled into the url first.
