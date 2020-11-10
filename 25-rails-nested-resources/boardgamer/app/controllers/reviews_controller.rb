@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :find_boardgame
   layout "boardgames"
 
   def new
-    @review = Review.new
+    @review = @boardgame.reviews.new
   end
 
   def create
@@ -16,11 +17,11 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all
+    @reviews = @boardgame.reviews
   end
 
   def show
-    @review = Review.find_by_id(params[:id])
+    @review = @boardgame.reviews.find_by_id(params[:id])
   end
 
   def search
@@ -32,6 +33,10 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:content, :boardgame_id)
+  end
+
+  def find_boardgame
+    @boardgame = Boardgame.find_by(id: params[:boardgame_id])
   end
 
 end

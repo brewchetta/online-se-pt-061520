@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   root "boardgames#index"
 
-  resources :boardgames
-  resources :categories, only: [:new, :create]
+  # namespace :boardgames do
+  #   # an additional route, we'll use this in a minute for illustrative purposes...
+  #   resources :reviews, only: [:new, :create, :show, :index]
+  # end
 
-  # an additional route, we'll use this in a minute for illustrative purposes...
-  get '/reviews/search', to: 'reviews#search', as: 'search_reviews'
-  resources :reviews, only: [:new, :create, :show, :index]
+  resources :boardgames do
+    get '/reviews/search', to: 'reviews#search', as: 'search_reviews'
+    resources :reviews, only: [:new, :create, :show, :index]
+  end
+
+  resources :categories, only: [:new, :create]
 
   # add boardgame to category
   post '/add-to-category', to: 'categories#add_to_category', as: 'add_to_category'
