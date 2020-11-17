@@ -1,0 +1,9 @@
+<% if errors&.any? %>
+
+  <ul class="errors-list">
+    <% errors.each do |err| %>
+      <li><%= err %></li>
+    <% end %>
+  </ul>
+
+<% end %>

@@ -1,0 +1,28 @@
+<h1><%= title %></h1>
+
+<%= form_with model: @boardgame do |form| %>
+
+  <%= render "partials/errors", errors: @boardgame&.errors&.full_messages %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :playtime %>
+  <%= form.number_field :playtime %>
+
+  <%= form.label :minimum_age %>
+  <%= form.number_field :minimum_age %>
+
+  <%= form.label :min_players %>
+  <%= form.number_field :min_players %>
+
+  <%= form.label :max_players %>
+  <%= form.number_field :max_players %>
+  <br>
+
+  <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  <br>
+
+  <%= form.submit %>
+
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= @boardgame.name %> Reviews</h1>
+
+<% @reviews.each do |review| %>
+  <%= link_to "Game: #{review.boardgame.name} | Content: #{review.content[0..30]}...", boardgame_review_path(review.boardgame, review) %>
+  <br><br>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Write A New Review</h1>
+
+<%= form_with model: @review do |form| %>
+  <%= render "partials/errors", errors: @review&.errors&.full_messages %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <p>Something goes here to select a review...</p>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,11 @@
+<h1>All Boardgames</h1>
+
+<ul class="boardgame-list">
+  <% all_boardgames.each do |bg| %>
+
+    <li><%= link_to bg.name, boardgame_path(bg) %></li>
+
+  <% end %>
+</ul>
+
+<p><%= all_boardgames %></p>
