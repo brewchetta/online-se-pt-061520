@@ -1,0 +1,9 @@
+<h1>Welcome <%= @user.username %>!</h1>
+
+You have written <%= @user.reviews.length %> reviews...
+
+<% @user.reviews.each do |rev| %>
+
+  <%= link_to review.boardgame.name, boardgame_review_path(review.boardgame, review) %>
+
+<% end %>

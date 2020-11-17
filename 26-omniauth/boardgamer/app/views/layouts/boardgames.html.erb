@@ -19,6 +19,12 @@
       <%= link_to "Boardgames", boardgames_path %>
       <%= link_to "Add Boardgame", new_boardgame_path %>
       <%= link_to "Add Category", new_category_path %>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", login_path %>
+        <%= link_to "Sign Up", new_user_path %>
+      <% end%>
     </nav>
 
     <%= yield %>
