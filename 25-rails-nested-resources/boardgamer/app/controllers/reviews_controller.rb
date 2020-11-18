@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   layout "boardgames"
 
   def new
+    @boardgame = Boardgame.new
     @review = @boardgame.reviews.new
   end
 

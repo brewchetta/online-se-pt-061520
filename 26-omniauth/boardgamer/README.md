@@ -15,27 +15,14 @@ The controller then needs to fire off a `find_or_create_by`. If the user exists,
 Example of a callback:
 
 ```
-def google_oauth_callback
-
-  user_info = request.env['omniauth.auth']['info']
-
-  user = find_or_create_by(email: user_info['email']) do |user|
-    # Inside this block we can set attributes for a created user
-
-    user.username = user_info['username']
+def google_login
+  user_email = request.env['omniauth.auth']['info']['email']
+  user_name = request.env['omniauth.auth']['info']['name']
+  @user = User.find_or_create_by(email: user_email) do |user|
+    user.username = user_name
     user.password = SecureRandom.hex
-
-    # Since the user doesn't need a password we generate an unguessable random one
   end
-
-  if user && user.valid?
-    session[:user_id] = user.id
-    redirect_to boardgames_path
-
-  else
-    flash[:error] = "An error occurred"
-    redirect_to login_path
-
-  end
+  session[:user_id] = @user.id
+  redirect_to user_path(@user)
 end
 ```

@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   #   resources :reviews, only: [:new, :create, :show, :index]
   # end
 
+  resources :reviews, only: [:show, :edit, :update, :destroy]
+
   resources :boardgames do
-    get '/reviews/search', to: 'reviews#search', as: 'search_reviews'
-    resources :reviews, only: [:new, :create, :show, :index]
+    # get '/reviews/search', to: 'reviews#search', as: 'search_reviews'
+    resources :reviews, only: [:new, :create, :index]
   end
 
   resources :categories, only: [:new, :create]

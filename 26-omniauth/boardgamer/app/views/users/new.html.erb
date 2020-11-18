@@ -2,6 +2,7 @@
 
 <%# To render the errors, make sure you have `local: true` as an option %>
 <%= form_with model: @user, local: true do |f| %>
+
   <% if @user.errors.any? %>
     <p>There were errors:</p>
     <p><%= @user.errors.full_messages.join(" | ") %></p>
