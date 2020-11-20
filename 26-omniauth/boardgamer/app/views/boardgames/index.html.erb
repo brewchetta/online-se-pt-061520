@@ -1,11 +1,16 @@
 <h1>All Boardgames</h1>
 
+<%= form_with url: boardgame_search_path, local: true do |form| %>
+  <%= form.text_field :search_term %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <ul class="boardgame-list">
-  <% all_boardgames.each do |bg| %>
+  <% @boardgames.each do |bg| %>
 
     <li><%= link_to bg.name, boardgame_path(bg) %></li>
 
   <% end %>
 </ul>
 
-<p><%= all_boardgames %></p>
+<p><%= @boardgames %></p>

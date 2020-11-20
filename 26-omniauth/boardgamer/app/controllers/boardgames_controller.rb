@@ -45,6 +45,11 @@ class BoardgamesController < ApplicationController
     redirect_to boardgame_path(params[:boardgame_id])
   end
 
+  def search
+    @boardgames = Boardgame.search_by("name", params[:search_term])
+    render :index
+  end
+
   private
 
   def find_boardgame

@@ -7,4 +7,7 @@ class Boardgame < ApplicationRecord
   accepts_nested_attributes_for :reviews
 
   validates :name, presence: true, uniqueness: true
+
+  scope :search_by, -> (attribute, search) { where("#{attribute} LIKE ?", "%#{search}%") }
+
 end

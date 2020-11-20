@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "boardgames#index"
 
+  post '/boardgames/search', to: 'boardgames#search', as: 'boardgame_search'
+
   resources :boardgames do
     get '/reviews/search', to: 'reviews#search', as: 'search_reviews'
     resources :reviews, only: [:new, :create, :show, :index]
