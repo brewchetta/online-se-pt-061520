@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.user = current_user
+    @review = @boardgame.reviews.new(review_params)
+    @review.user = User.find_by(id: session[:user_id])
     if @review.save
       flash[:message] = "Review added successfully for #{@review.boardgame.name}"
       redirect_to boardgame_path(@review.boardgame)

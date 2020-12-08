@@ -1,6 +1,6 @@
 <h1>Write A New Review</h1>
 
-<%= form_with model: @review do |form| %>
+<%= form_with model: @review, url: boardgame_reviews_path(@review.boardgame), local: true do |f| %>
   <%= render "partials/errors", errors: @review&.errors&.full_messages %>
 
   <%= f.label :content %>
