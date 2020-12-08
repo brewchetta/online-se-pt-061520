@@ -40,4 +40,10 @@ pTag.innerText = "Hello!"
 document.body.appendChild(pTag)
 ```
 
+And remove them:
+
+```
+pTag.remove()
+```
+
 There are numerous ways to change the DOM and the best way to learn is to try things and experiment!
