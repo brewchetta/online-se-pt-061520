@@ -10,3 +10,11 @@ a {
 h1 {
   color: orange;
 }
+
+#navbar {
+  border: solid red 2px;
+}
+
+.img-container {
+  border: dashed green 2px;
+}
