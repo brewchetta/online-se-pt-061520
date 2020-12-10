@@ -2,6 +2,8 @@ class SomeClass
 
   attr_accessor :name
 
+  @@class_var = "I am a class variable"
+
   def initialize(name)
     self.name = name
   end
