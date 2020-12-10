@@ -1,5 +1,3 @@
-require "pry"
-
 # String
 some_string = "I am a string"
 string_interpolation = "I am #{1} string with interpolation"
@@ -22,5 +20,3 @@ some_hash = {
 
 # Array
 some_array = [1,2,3]
-
-binding.pry
