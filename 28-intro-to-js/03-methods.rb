@@ -5,7 +5,8 @@ def some_method(arg)
 end
 
 def implicit_return_method
-  "I will be implicitly returned"
+  # last line gets returned
+  return "I will be implicitly returned"
 end
 
 # Procs / Lambdas
