@@ -10,9 +10,25 @@
   </head>
   <body>
 
-    <button type="button" name="button" id="button-1">Click Me For Shenanigans!</button>
-    <button type="button" name="button" id="button-2">Also Click Me For Shenanigans!</button>
+    <!-- Buttons to play with -->
+    <div id="buttons-div">
+      <button id="button-1">Click Me For Shenanigans!</button>
+      <button id="button-2">Also Click Me For Shenanigans!</button>
+    </div>
 
+    <!-- Form that we need to prevent from submitting... -->
+    <form id="do-not-submit" action="#">
+      <input id="text-field" type="text" placeholder="We can type stuff here!">
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- List of famous cats -->
+    <h4>Famous Cat Names:</h4>
+    <ul id="famous-cats-list">
+      <li>Grumpy cat</li>
+    </ul>
+
+    <!-- Div of cat memes -->
     <div id="images-container">
       <img src="https://i.chzbgr.com/full/9517778944/h30875976/cat-self-quarantined-day-6-laughing-at-my-own-jokes" alt="cats">
 
@@ -27,6 +43,7 @@
       <img src="https://www.masalaanews.com/wp-content/uploads/2017/02/Hilarious-Cat-Memes.jpg" alt="cats">
     </div>
 
+    <!-- 8-bit cat gif -->
     <div id="cat-square"></div>
 
   </body>
