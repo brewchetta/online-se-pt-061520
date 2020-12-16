@@ -1,0 +1,14 @@
+body {
+  padding: 3em;
+}
+
+#bubbling-div *, #capturing-div * {
+  background-color: white;
+  border: dashed grey 1px;
+  margin: 1em;
+}
+
+#button-parent {
+  border: dotted grey 1px;
+  padding: 1em;
+}

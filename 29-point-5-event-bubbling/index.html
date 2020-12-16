@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="script.js" charset="utf-8"></script>
+    <title>Event Bubbling</title>
+  </head>
+  <body>
+
+    <h2>JS: Event Bubbling</h2>
+
+    <p>Event bubbling is the idea that an event doesn't just belong to what it's been clicked on. Rather, that event gets passed upwards from parent to parent and can set off event listeners for those parents as well. Imagine we click on a button, the click event won't just fire for event listeners on the button, it'll also fire for event listeners on all of its parents as well.</p>
+
+    <p>We can test this by clicking on the button below:</p>
+
+    <div id="button-parent">
+      Parent Div <br>
+      <button id="child-button">Click me! I bubble!</button>
+    </div>
+
+    <p>When you click the button, it fires off the events for the button first since that was the event's original target. In an event, we can tell what the event's original target was with "event.target":</p>
+
+    <p>parentElement.addEventListener("click", function(event) {
+      console.log(event.target)
+    })</p>
+
+    <p>The above code will always mention the actual element that was clicked. However, the event listener may be attached to a different element and the reason the even fires at all is because event bubbles up to it. For example, the button above doesn't have an event listener, its parent \<div\> does. If we ever want to reference the element that has the event listener, refer to it as "this":</p>
+
+    <p>parentElement.addEventListener("click", function(event) {
+      console.log(this)
+    })</p>
+
+    <p>Bubbling doesn't just stop at the first parent, it bubbles all the way up to the root document itself. You can see this bubbling action by clicking anywhere in these nested divs. If you click the innermost div, it'll bubble all the way to the top (I've only made it fire alerts for these divs but as mentioned, it bubbles all the way up to the document):</p>
+
+    <div id="bubbling-div">
+      <div id="outer-div">Outer Div
+        <div id="middle-div">Middle Div
+          <div id="inner-div">Inner Div</div>
+        </div>
+      </div>
+    </div>
+
+    <p>In addition to these, there's something known as event capture as well. It's essentially "reverse bubbling" where when an event is registered, it starts from the top and zones in on the element that was clicked:</p>
+
+    <div id="capturing-div">
+      <div id="outer-div">Outer Div
+        <div id="middle-div">Middle Div
+          <div id="inner-div">Inner Div</div>
+        </div>
+      </div>
+    </div>
+
+    <p>To make something fire on capture, give your event listener a third argument of "true":</p>
+
+    <p>someElement.addEventListener("click", callbackFn, true)</p>
+
+    <p>Lastly, there is in fact a way to prevent bubbling with events (essentially keep a clicked on button from bubbling the event further up). In the event listener's callback, just add "event.stopPropagation()" and it won't bubble further.</p>
+
+    <p>someElement.addEventListener("click", function(event) {
+      event.stopPropagation()
+      // do stuff here
+    })</p>
+
+  </body>
+</html>
