@@ -16,13 +16,13 @@
   border: solid black 2px;
   border-radius: 10px;
   height: 100px;
-  right: 0;
+  right: 100px;
   position: fixed;
-  top: 0;
+  top: 100px;
   width: 100px;
 }
 
-#images-container {
+#images-cattainer {
   border: solid black 2px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -30,8 +30,13 @@
   margin: 1em;
 }
 
-#images-container img {
+#images-cattainer img {
   border: solid black 2px;
   width: 90%;
   margin: 1em;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg)}
+  100% { transform: rotate(360deg)}
 }
