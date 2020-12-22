@@ -30,19 +30,4 @@ document.addEventListener("keydown", function(event) {
       cat.style.right = fromRight + "px"
       break;
   }
-
-  // if (event.keycode === 38) {
-  //   // do stuff for going up
-  // } else if (event.keycode === 40) {
-  //   // go down
-  // } else if (event.keycode === 37) {
-  //   // go left
-  // } else if (event.keycode === 39) {
-  //   // go right
-  // }
 })
-
-// arrow up 38
-// arrow down 40
-// arrow left 37
-// arrow right 39
