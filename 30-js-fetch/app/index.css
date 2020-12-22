@@ -2,12 +2,6 @@
   font-family: 'Syne Mono', monospace;
 }
 
-#bubbling-div * {
-  background-color: white;
-  border: dashed grey 1px;
-  margin: 1em;
-}
-
 #cat-square {
   background-image: url("https://i.pinimg.com/originals/f3/cc/f7/f3ccf75f1883faea777a00f351c5dc60.gif");
   background-position: center;
@@ -27,6 +21,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: 800px;
+  min-height: 200px;
   margin: 1em;
 }
 
@@ -34,9 +29,4 @@
   border: solid black 2px;
   width: 90%;
   margin: 1em;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg)}
-  100% { transform: rotate(360deg)}
 }
