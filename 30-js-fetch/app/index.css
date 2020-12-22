@@ -1,0 +1,42 @@
+* {
+  font-family: 'Syne Mono', monospace;
+}
+
+#bubbling-div * {
+  background-color: white;
+  border: dashed grey 1px;
+  margin: 1em;
+}
+
+#cat-square {
+  background-image: url("https://i.pinimg.com/originals/f3/cc/f7/f3ccf75f1883faea777a00f351c5dc60.gif");
+  background-position: center;
+  background-size: cover;
+  /* background-color: #aaaa; */
+  border: solid black 2px;
+  border-radius: 10px;
+  height: 100px;
+  right: 100px;
+  position: fixed;
+  top: 100px;
+  width: 100px;
+}
+
+#images-cattainer {
+  border: solid black 2px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+  margin: 1em;
+}
+
+#images-cattainer img {
+  border: solid black 2px;
+  width: 90%;
+  margin: 1em;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg)}
+  100% { transform: rotate(360deg)}
+}
