@@ -11,12 +11,12 @@ class HighscoresController < ApplicationController
   end
 
   def create
-    @highscore = Highscore.new(highscore_params)
-    @highscore.game = Game.find_by(title: params[:title])
-    if @highscore.save
-      render json: @highscore
+    highscore = Highscore.new(highscore_params)
+    highscore.game = Game.find_or_create_by(title: params[:title])
+    if highscore.save
+      render json: highscore
     else
-      render json: { body: "Hi that didn't work", code: 404 }
+      render json: { error: highscore.errors.full_messages, status: 400}, status: 400
     end
   end
 
