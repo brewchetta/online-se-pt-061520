@@ -16,7 +16,7 @@ class HighscoresController < ApplicationController
     if highscore.save
       render json: highscore
     else
-      render json: { error: highscore.errors.full_messages, status: 400}, status: 400
+      render json: { error: highscore.errors.full_messages, status: 406}, status: 406
     end
   end
 

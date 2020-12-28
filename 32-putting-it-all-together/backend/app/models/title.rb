@@ -1,2 +1,0 @@
-class Title < ApplicationRecord
-end
