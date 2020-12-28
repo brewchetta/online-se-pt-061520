@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script defer src="index.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <title>High Scorer</title>
+  </head>
+  <body>
+
+    <h1>Post Your High Score</h1>
+
+    <!-- high score form -->
+    <form id="high-score-form">
+
+      <select class="" name="">
+        <option value="Galaga">Galaga</option>
+        <option value="Donkey Kong">Donkey Kong</option>
+        <option value="Ms. Pacman">Ms. Pacman</option>
+        <option value="Centipede">Centipede</option>
+        <option value="Frogger">Frogger</option>
+        <option value="Dig Dug">Dig Dug</option>
+        <option value="Moon Patrol">Moon Patrol</option>
+      </select>
+
+      <input type="number" name="Score" value="0" min="0">
+
+      <input type="text" name="initials" maxlength="3" minlength="3">
+
+      <input type="submit" name="submit" value="Submit">
+
+    </form>
+
+    <!-- high score list -->
+    <ul id="high-score-list">
+    </ul>
+
+  </body>
+</html>
