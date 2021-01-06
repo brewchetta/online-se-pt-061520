@@ -23,13 +23,20 @@ function loadHighscore(highscore, title) {
 function loadHighscores() {
   fetch(URL + `/games`)
   .then(parseJSON)
-  .then(function(games) {
+  .then(games => {
     games.forEach(game => {
       game.highscores.forEach(highscore => {
         loadHighscore(highscore, game.title)
       })
     })
   })
+  // .then(function(games) {
+  //   games.forEach(game => {
+  //     game.highscores.forEach(highscore => {
+  //       loadHighscore(highscore, game.title)
+  //     })
+  //   })
+  // })
 }
 
 // post a new highscore
