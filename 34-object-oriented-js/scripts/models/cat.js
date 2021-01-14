@@ -1,17 +1,3 @@
-class Animal {
-
-  constructor(name, canBePet, diet) {
-    this.name = name
-    this.canBePet = canBePet
-    this.diet = diet
-  }
-
-  makeSound = function() {
-    console.log(`${this.name} made a sound`)
-  }
-
-}
-
 class Cat extends Animal {
 
   constructor(name, canBePet, diet, livesRemaining) {
@@ -39,8 +25,3 @@ class Cat extends Animal {
   }
 
 }
-
-
-octavia = new Cat("Octavia", true, "fish as in now", 7)
-
-ursula = new Cat("Ursula", false, "fishies", 9)
