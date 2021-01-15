@@ -6,7 +6,13 @@ class API {
   }
 
   // Helpers //
-  parseJSON = response => response.json()
+  parseJSON = response => {
+    if (response.status === 200) {
+      return response.json()
+    } else {
+      throw console.error("Nope")
+    }
+  }
 
   headers = {"Accepts": "application/json", "Content-Type": "application/json"}
 
