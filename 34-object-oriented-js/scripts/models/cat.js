@@ -8,12 +8,23 @@ class Cat extends Animal {
 
   static allCats = []
 
-  static sayAllCatNames = () => {
+  static sayAllNames = () => {
     this.allCats.forEach(cat => console.log(cat.name))
   }
 
   takeBath = () => {
+
+    const newArrowFunction = () => {
+      console.log(this)
+    }
+
+    newArrowFunction()
     return `${this.name} licks their fur`
+  }
+
+  eat() {
+    console.log(super.eat())
+    return "Meow meow meow feed me"
   }
 
   makeSound = () => {
