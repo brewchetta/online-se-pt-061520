@@ -6,7 +6,11 @@ class PokemonsController < ApplicationController
 
   def show
     pokemon = Pokemon.find_by_id(params[:id])
-    render json: pokemon, include: [:trainer]
+    if !pokemon
+      render json: { error: "No pokemon by that ID", status: 400 }, status: 400
+    else
+      render json: pokemon, include: [:trainer]
+    end
   end
 
   def create
@@ -17,16 +21,17 @@ class PokemonsController < ApplicationController
       pokemon = Pokemon.create(nickname: name, species: species, trainer: trainer)
       render json: pokemon, include: [:trainer]
     else
-      render json: {
-        error: "Trainer must exist and cannot have more than six pokemon!",
-        status: 400
-      }, status: 400
+      render json: { error: "Trainer must exist and cannot have more than six pokemon!", status: 400 }, status: 400
     end
   end
 
   def destroy
     pokemon = Pokemon.find_by_id(params[:id])
-    pokemon.destroy
-    render json: pokemon, include: [:trainer]
+    if !pokemon
+      render json: { error: "No pokemon by that ID", status: 400 }, status: 400
+    else
+      pokemon.destroy
+      render json: pokemon, include: [:trainer]
+    end
   end
 end
