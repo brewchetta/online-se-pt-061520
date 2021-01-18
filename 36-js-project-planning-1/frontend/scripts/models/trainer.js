@@ -15,7 +15,7 @@ class Trainer {
   // Helpers //
 
   createPokemon = () => {
-    const api = new API
+    // You can still call `api` if it was declared in the index
     api.postPokemon(this.id)
     .then(pokeData => {
       const newPoke = new Pokemon(pokeData)

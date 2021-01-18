@@ -9,7 +9,7 @@ class Pokemon {
   // Helpers //
 
   delete = () => {
-    const api = new API
+    // You can still call `api` if it was declared in the index
     api.deletePokemon(this.id)
     delete this
   }
