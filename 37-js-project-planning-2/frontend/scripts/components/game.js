@@ -10,6 +10,34 @@ class Game {
     this.timerInterval = setInterval(this.timerTick, 1000)
   }
 
+  // Getters //
+
+  get flippedCards() {
+    return this.cards.filter(card => card.flipped)
+  }
+
+  // Creation Methods //
+
+  createGameBoard = () => {
+    this.gameBoard = document.createElement('div')
+    this.gameBoard.id = "game-board"
+    main.append(this.gameBoard)
+    this.clock = document.createElement('span')
+    this.clock.innerText = 0
+    this.gameBoard.append(this.clock)
+  }
+
+  randomizeCardOrder = array => {
+    const combinedArray = [...array,...array]
+    const shuffledArray = []
+    while (combinedArray.length) {
+      const randomIndex = Math.floor(Math.random() * combinedArray.length)
+      shuffledArray.push(combinedArray[randomIndex])
+      combinedArray.splice(randomIndex, 1)
+    }
+    return shuffledArray
+  }
+
   createCards = (array) => {
     const shuffledCards = this.randomizeCardOrder(array)
     for (var i = 0; i < shuffledCards.length; i++) {
@@ -24,8 +52,11 @@ class Game {
     this.clock.innerText = this.timer
   }
 
+  // Card Flip Event Handlers //
+
   handleCardFlip = card => {
-    if (!this.locked && !card.matched && !card.flipped) {
+    const cardCanBeFlipped = !this.locked && !card.matched && !card.flipped
+    if (cardCanBeFlipped) {
       card.flip()
       if (this.previousCard && card.image === this.previousCard.image) {
         this.handleCorrectGuess(card)
@@ -64,30 +95,8 @@ class Game {
     }
   }
 
-  get flippedCards() {
-    return this.cards.filter(card => card.flipped)
-  }
-
-  randomizeCardOrder = array => {
-    const combinedArray = [...array,...array]
-    const shuffledArray = []
-    while (combinedArray.length) {
-      const randomIndex = Math.floor(Math.random() * combinedArray.length)
-      shuffledArray.push(combinedArray[randomIndex])
-      combinedArray.splice(randomIndex, 1)
-    }
-    return shuffledArray
-  }
-
-  createGameBoard = () => {
-    this.gameBoard = document.createElement('div')
-    this.gameBoard.id = "game-board"
-    main.append(this.gameBoard)
-    this.clock = document.createElement('span')
-    this.clock.innerText = 0
-    this.gameBoard.append(this.clock)
-  }
+  // End Game Methods //
 
   removeGameBoard = () => this.gameBoard.remove()
 
-}
+} // End Game Class
