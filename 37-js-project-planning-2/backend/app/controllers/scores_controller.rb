@@ -42,7 +42,7 @@ class ScoresController < ApplicationController
   end
 
   def score_params
-    params.require(:score).permit(:name)
+    params.require(:score).permit(:guesses, :time_in_seconds, :num_cards)
   end
 
 end
