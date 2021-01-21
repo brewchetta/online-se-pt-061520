@@ -37,6 +37,10 @@ class APIAdapter {
     body: JSON.stringify(body)
   }).then(this.parseJSON)
 
-  // fetch post new score + user
+  postUserScore = body => fetch(this.scoresURL, {
+    method: "POST",
+    headers: this.headers,
+    body: JSON.stringify(body)
+  }).then(this.parseJSON)
 
 }

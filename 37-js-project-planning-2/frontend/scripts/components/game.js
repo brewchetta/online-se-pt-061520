@@ -1,6 +1,7 @@
 class Game {
 
   constructor() {
+    main.innerHTML = ""
     this.cards = []
     this.firstFlip = true
     this.badGuesses = 0
@@ -91,7 +92,7 @@ class Game {
   checkWinCondition = () => {
     if (this.flippedCards.length === this.cards.length) {
       clearInterval(this.timerInterval)
-      alert(`You won! You made ${this.badGuesses} wrong guesses!`)
+      new VictoryScreen({badGuesses: this.badGuesses, timer: this.timer, numCards: this.cards.length})
     }
   }
 
