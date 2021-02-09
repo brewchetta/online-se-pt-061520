@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function HungerMeter(props) {
+export default class HungerMeter extends Component {
 
-  return (
-    <p>{props.name} is {props.isHungry ? "hungry" : "well fed"}</p>
-  )
+  state = {
+    isHungry: this.props.isHungry
+  }
+
+  render() {
+
+    console.log(this.state);
+
+    return (
+
+      <p onClick={() => this.setState({isHungry: !this.state.isHungry})}>
+        {this.props.name} is {this.state.isHungry ? "hungry" : "well fed"}
+      </p>
+
+    )
+
+  }
 
 }
