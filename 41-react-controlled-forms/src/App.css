@@ -11,6 +11,10 @@
   width: 3em;
 }
 
+#calculator-form input[type=button] {
+  width: auto;
+}
+
 #calculator-form select {
   background: none;
   border: none;
