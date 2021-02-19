@@ -12,7 +12,7 @@ class CalculatorForm extends React.Component {
     return(
       <form id="calculator-form" onSubmit={this.handleSubmit}>
 
-        <input type="number"/>
+        <input type="number" value={1} />
 
         <select>
 
@@ -23,7 +23,7 @@ class CalculatorForm extends React.Component {
 
         </select>
 
-        <input type="number"/>
+        <input type="number" value={1} />
 
         <span> = Some Number</span>
 

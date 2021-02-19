@@ -1,3 +1,24 @@
 .App {
   text-align: center;
 }
+
+#calculator-form input {
+  text-align: center;
+  width: 3em;
+}
+
+#calculator-form select {
+  background: none;
+  border: none;
+
+  /* To remove the arrow on the select tag use the code below */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+#robot-img {
+  margin: 5em;
+  width: 200px;
+}
