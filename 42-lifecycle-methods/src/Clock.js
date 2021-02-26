@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class Clock {
+class Clock extends Component {
 
   constructor(props) {
 
     super(props)
 
-    state = {
-      time: new Date()
+    this.state = {
+      time: new Date().toLocaleString('en-US', { timezone: 'America/New York' })
     }
 
   }
@@ -16,7 +16,7 @@ class Clock {
 
     return (
 
-      <p>{this.state.time}</p>
+      <h2>New York City: {this.state.time}</h2>
 
     )
 
