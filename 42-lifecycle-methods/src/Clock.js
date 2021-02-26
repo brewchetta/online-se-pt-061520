@@ -7,7 +7,7 @@ class Clock extends Component {
     super(props)
 
     this.state = {
-      time: new Date().toLocaleString('en-US', { timezone: 'America/New York' })
+      time: new Date().toLocaleString('en-US', { timeZone: 'EST' })
     }
 
   }
@@ -16,7 +16,7 @@ class Clock extends Component {
 
     return (
 
-      <h2>New York City: {this.state.time}</h2>
+      <h2>EST: {this.state.time}</h2>
 
     )
 
