@@ -22,11 +22,6 @@ class Clock extends Component {
     clearInterval(this.interval)
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    const seconds = parseInt(nextState.time.split(" ")[1].split(":")[2])
-    return !(seconds % 2)
-  }
-
   render() {
 
     return (
