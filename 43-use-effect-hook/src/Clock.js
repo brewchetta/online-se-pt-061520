@@ -1,36 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-class Clock extends Component {
+function Clock(props) {
 
-  constructor(props) {
+  const [time, setTime] = useState(new Date().toLocaleString('en-US', { timeZone: props.timezone }))
 
-    super(props)
+  useEffect(() => {
 
-    this.state = {
-      time: new Date().toLocaleString('en-US', { timeZone: props.timezone })
+    const interval = setInterval(() => {
+      setTime(new Date().toLocaleString('en-US', { timeZone: props.timezone }))
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
     }
 
-  }
+  }, [props])
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState({time: new Date().toLocaleString('en-US', { timeZone: this.props.timezone })})
-    }, 1000)
-  }
+  return (
 
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
+    <h2>{props.timezone}: {time}</h2>
 
-  render() {
-
-    return (
-
-      <h2>{this.props.timezone}: {this.state.time}</h2>
-
-    )
-
-  }
+  )
 
 }
 

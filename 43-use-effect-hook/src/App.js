@@ -1,35 +1,31 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Clock from './Clock'
 import './App.css';
 
-class App extends Component {
+function App(props) {
 
-  state = {
-    timezones: []
+  const [timezones, setTimezones] = useState([])
+
+  useEffect(() => {
+      fetch('http://localhost:3000/timezones')
+      .then(res => res.json())
+      .then(timezones => {
+        setTimezones(timezones)
+      })
+  }, [])
+
+  const renderClocks = () => {
+    console.log(timezones);
+    return timezones.map(tz => <Clock key={tz} timezone={tz} />)
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000/timezones')
-    .then(res => res.json())
-    .then(timezones => {
-      this.setState({timezones})
-    })
-  }
+  return (
+    <div className="App">
 
-  renderClocks = () => {
-    return this.state.timezones.map(tz => <Clock key={tz} timezone={tz} />)
-  }
+      {renderClocks()}
 
-  render() {
-
-    return (
-      <div className="App">
-
-        {this.renderClocks()}
-
-      </div>
-    )
-  }
+    </div>
+  )
 
 }
 
