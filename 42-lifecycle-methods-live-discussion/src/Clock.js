@@ -24,7 +24,7 @@ class Clock extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     const seconds = parseInt(nextState.time.split(" ")[1].split(":")[2])
-    return !(seconds % 2)
+    return !(seconds % 5)
   }
 
   render() {
