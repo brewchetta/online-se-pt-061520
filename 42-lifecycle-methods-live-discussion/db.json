@@ -1,0 +1,10 @@
+{
+  "timezones": [
+    "GMT",
+    "EST",
+    "America/Chicago",
+    "America/Denver",
+    "America/Phoenix",
+    "America/Bogota"
+  ]
+}
