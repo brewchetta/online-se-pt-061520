@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import FormElement from "./FormElement"
+import AnimationElement from "./AnimationElement"
 import './App.css';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
 
       <FormElement />
 
-      <VideoElement />
+      <AnimationElement />
 
     </div>
   );

@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 
 class FormElement extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   handleClick = () => {
     console.log("Let's do things")
   }
