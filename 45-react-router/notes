@@ -1,0 +1,12 @@
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
+
+<Router>
+  <NavLink to="/" exact>Home</NavLink>
+  <NavLink to="/welcome" exact>Welcome</NavLink>
+  <Route exact path="/" component={App} />
+  <Route exact path="/things" render={routerProps => <Welcome />} />
+  <Route path="/things/:item" render={routerProps => <Things {...routerProps} />} />
+  <Route exact path="/welcome" component={Welcome} />
+</Router>
+
+match.params.item
