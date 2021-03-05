@@ -6,13 +6,20 @@
   animation: party-mode 1s infinite linear;
   animation-play-state: paused;
   background-color: red;
+  position: relative;
   display: inline-block;
   height: 100px;
   width: 100px;
 }
 
 @keyframes party-mode {
-  0% {filter: hue-rotate(0deg); height: 100px; width: 100px;}
+  /* 0% {filter: hue-rotate(0deg); height: 100px; width: 100px;}
   50% {filter: hue-rotate(180deg); height: 50px; width: 200px;}
-  100% {filter: hue-rotate(360deg; height: 100px; width: 100px;)}
+  100% {filter: hue-rotate(360deg; height: 100px; width: 100px;)} */
+  0% {top: 0px; left: 0px;}
+  25% {top: 100px; left: 0px;}
+  50% {top: 100px; left: 100px}
+  75% {top: 0px; left: 100px;}
+  100% {top: 0px; left: 0px;}
+
 }

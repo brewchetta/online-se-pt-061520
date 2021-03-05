@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 function AnimationElement(props) {
 
+  const animatedDiv = useRef(null)
+
   const handlePlay = () => {
     console.log("We ought to play the animation when this is clicked!")
+    console.log(animatedDiv)
+    animatedDiv.current.style.animationPlayState = "running"
   }
 
   const handlePause = () => {
     console.log("We ought to pause the animation when this is clicked!")
+    animatedDiv.current.style.animationPlayState = "paused"
   }
 
   return (
@@ -18,7 +23,7 @@ function AnimationElement(props) {
 
       <br/>
 
-      <div id="animated-div" />
+      <div ref={animatedDiv} id="animated-div" />
 
     </div>
   )

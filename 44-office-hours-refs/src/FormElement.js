@@ -3,8 +3,11 @@ import React, { Component } from 'react'
 class FormElement extends Component {
 
   handleClick = () => {
-    console.log("Let's do things")
+    console.log(this.chettsFancyInput)
+    this.chettsFancyInput.current.focus()
   }
+
+  chettsFancyInput = React.createRef()
 
   render() {
     return (
@@ -12,6 +15,7 @@ class FormElement extends Component {
 
         <input type="text"
         placeholder={"Hello I am an input field!"}
+        ref={this.chettsFancyInput}
         />
 
         <button onClick={this.handleClick}>Click Me to Focus the Input</button>
