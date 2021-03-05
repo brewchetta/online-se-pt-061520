@@ -2,6 +2,8 @@ export default function About() {
 
   return (
     <>
+      <h2>About</h2>
+
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt quam sed urna ornare, et interdum justo consequat. Maecenas ut risus id orci faucibus fringilla. Nulla sagittis a neque vitae faucibus. Praesent augue lacus, fringilla sit amet molestie at, fringilla ac felis. Duis tincidunt urna a finibus varius. Curabitur metus elit, efficitur quis fermentum at, imperdiet vel ipsum. Morbi ligula diam, mollis a erat ut, finibus dictum ligula.</p>
 
       <p>Phasellus sollicitudin erat non maximus porttitor. Suspendisse vel tortor ipsum. Nam id tellus sollicitudin, efficitur arcu in, lacinia nibh. Curabitur vel scelerisque quam, non bibendum velit. Suspendisse tristique eros ut ultricies suscipit. Vivamus lacinia est quis turpis bibendum pulvinar. Cras commodo sapien tellus, blandit ultrices magna vestibulum vitae. Vestibulum ut ipsum ac odio mollis vehicula.</p>

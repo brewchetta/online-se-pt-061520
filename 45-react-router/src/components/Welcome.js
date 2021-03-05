@@ -1,7 +1,7 @@
 export default function Welcome() {
 
   return (
-    <p>Welcome To My Awesome Comics Collection!</p>
+    <h1>Welcome To My Awesome Comics Collection!</h1>
   )
 
 }
