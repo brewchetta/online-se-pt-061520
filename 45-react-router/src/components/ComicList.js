@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
+
 export default function ComicList({comics}) {
 
   const renderComics = () => {
-    return comics.map(c => <a href="#">{c.title}</a>)
+    return comics.map(c => <Link to={`/comics/${c.title.toLowerCase().replace(/[ ]/g, '-')}`}>{c.title}</Link>)
   }
 
   return (

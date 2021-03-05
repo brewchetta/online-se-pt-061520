@@ -1,14 +1,34 @@
-export default function ComicView({comic}) {
+export default function ComicView(props) {
+
+  const title = props.match.params.title
+
+  console.log(title)
+
+  const foundComic = props.comics.find(comic => comic.title.toLowerCase().replace(/[ ]/g, "-") === title)
+
+  console.log(foundComic)
 
   return (
 
     <div className="comic-view">
 
-      <h2>{comic.title}</h2>
+      {foundComic
 
-      <h3>by {comic.authors}</h3>
+        ?
 
-      <img className="comic-view-image" src={comic.art_url} alt="uh oh something went wrong..." />
+      (<>
+        <h2>{foundComic.title}</h2>
+
+        <h3>by {foundComic.authors}</h3>
+
+        <img className="comic-view-image" src={foundComic.art_url} alt="uh oh something went wrong..." />
+
+      </>)
+
+        :
+
+      <p>404 comic not found</p>}
+
 
     </div>
 
