@@ -1,0 +1,59 @@
+{
+  "comics": [
+    {
+      "title": "The Amazing Spiderman",
+      "authors": "Stan Lee & Steve Ditko",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/562/DIG000136._SX400_QL80_TTD_.jpg"
+    },
+    {
+      "title": "Watchmen",
+      "authors": "Alan Moore",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/26085/26085._SX1600_QL80_TTD_.jpg"
+    },
+    {
+      "title": "Akira",
+      "authors": "Katsuhiro Otomo",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/I/71eF85wV46L.jpg"
+    },
+    {
+      "title": "Y: The Last Man",
+      "authors": "Brian K. Vaughn",
+      "art_url": "https://static.wikia.nocookie.net/marvel_dc/images/a/a8/Y_the_Last_Man_1.jpg/revision/latest?cb=20061108190443"
+    },
+    {
+      "title": "The Sandman",
+      "authors": "Neil Gaiman",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/I/71LGc-lUAnL.jpg"
+    },
+    {
+      "title": "Fables",
+      "authors": "Bill Willingham",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/I/71VVpcjEp9L.jpg"
+    },
+    {
+      "title": "Monstress",
+      "authors": "Marjorie Liu",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/I/91+a90c7BWL.jpg"
+    },
+    {
+      "title": "Lumberjanes",
+      "authors": "Shannon Watters, Grace Ellis, Brooklyn Allen & Noelle Stevenson",
+      "art_url": "https://images-na.ssl-images-amazon.com/images/I/81U4rjx0Z0L.jpg"
+    },
+    {
+      "title": "The Wicked + The Divine",
+      "authors": "Kieron Gillen & Jamie McKelvie",
+      "art_url": "https://m.media-amazon.com/images/I/418c7VIKjUL.jpg"
+    },
+    {
+      "title": "Ms Marvel",
+      "authors": "G. Willow Wilson",
+      "art_url": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/52e6c3c8df654/clean.jpg"
+    },
+    {
+      "title": "The Unbeatable Squirrel Girl",
+      "authors": "Will Murray & Steve Ditko",
+      "art_url": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/562692572d9d0/clean.jpg"
+    }
+  ]
+}
