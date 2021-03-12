@@ -2,20 +2,14 @@ import { useState, useEffect } from 'react'
 import LoginForm from './LoginForm'
 import UserProfiles from './UserProfiles'
 import './App.css';
-import { BACKEND_URL } from './constants'
+import { fetchLogin } from './fetches'
 
 function App() {
 
   const [user, setUser] = useState({})
 
   const handleLogin = credentials => {
-    fetch(BACKEND_URL + 'auth', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accepts': 'application/json'},
-      body: JSON.stringify(credentials)
-    })
-    .then(res => res.json())
-    .then(data => {
+    fetchLogin(credentials).then(data => {
       data.message && alert(data.message)
       if (data.jwt) {
         localStorage.setItem('jwt', data.jwt)

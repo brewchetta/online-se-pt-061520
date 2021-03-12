@@ -1,18 +1,12 @@
 import { useState } from 'react'
-import { BACKEND_URL } from './constants'
+import { fetchUsers } from './constants'
 
 export default function UserProfiles() {
 
   const [profiles, setProfiles] = useState([])
 
-  const fetchProfile = () => {
-    fetch(BACKEND_URL + 'users', {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
+  const handleFetchUsers = () => {
+    fetchUsers().then(data => {
       data.message ? alert(data.message) : setProfiles(data)
     })
   }
