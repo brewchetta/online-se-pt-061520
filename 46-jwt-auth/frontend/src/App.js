@@ -1,25 +1,47 @@
+import { useState, useEffect } from 'react'
 import LoginForm from './LoginForm'
-import Profile from './Profile'
+import UserProfiles from './UserProfiles'
 import './App.css';
-
-const BACKEND_URL = 'http://localhost:3000'
+import { BACKEND_URL } from './constants'
 
 function App() {
 
+  const [user, setUser] = useState({})
+
   const handleLogin = credentials => {
-    fetch(BACKEND_URL + '/api/v1/auth', {
+    fetch(BACKEND_URL + 'auth', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accepts': 'application/json'},
       body: JSON.stringify(credentials)
     })
-    .then(console.log)
+    .then(res => res.json())
+    .then(data => {
+      data.message && alert(data.message)
+      if (data.jwt) {
+        localStorage.setItem('jwt', data.jwt)
+        setUser(data.user)
+      }
+    })
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('jwt')
+    setUser({})
   }
 
   return (
     <div className="App">
+
+      <p>{user.username ? `Welcome ${user.username}` : null}</p>
+
       <h1>JWT with React</h1>
+
       <LoginForm handleLogin={handleLogin} />
-      <Profile backendURL={BACKEND_URL} />
+
+      <button onClick={handleLogout}>Logout</button>
+
+      <UserProfiles backendURL={BACKEND_URL} />
+
     </div>
   );
 }

@@ -18,7 +18,10 @@ export default function LoginForm({handleLogin}) {
     }
   }
 
-  const handleSubmit = () => handleLogin({username, password})
+  const handleSubmit = event => {
+    event.preventDefault()
+    handleLogin({user: {username, password}})
+  }
 
   return (
     <form id="login-form" onSubmit={handleSubmit}>
