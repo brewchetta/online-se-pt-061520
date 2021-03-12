@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { fetchUsers } from './constants'
+import { fetchUsers } from './fetches'
 
 export default function UserProfiles() {
 
   const [profiles, setProfiles] = useState([])
 
-  const handleFetchUsers = () => {
+  const handleClick = () => {
     fetchUsers().then(data => {
       data.message ? alert(data.message) : setProfiles(data)
     })
@@ -18,7 +18,7 @@ export default function UserProfiles() {
   return (
     <div id="profile">
 
-      <button onClick={fetchProfile}>Fetch Users</button>
+      <button onClick={handleClick}>Fetch Users</button>
 
       {renderProfiles()}
 

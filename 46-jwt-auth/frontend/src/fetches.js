@@ -11,9 +11,11 @@ export const fetchLogin = credentials => {
   .then(parseJSON)
 }
 
-export fetch(BACKEND_URL + 'users', {
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('jwt')}`
-  }
-})
-.then(parseJSON)
+export const fetchUsers = () => {
+  return fetch(BACKEND_URL + 'users', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`
+    }
+  })
+  .then(parseJSON)
+}

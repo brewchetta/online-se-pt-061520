@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import LoginForm from './LoginForm'
 import UserProfiles from './UserProfiles'
 import './App.css';
@@ -34,7 +34,7 @@ function App() {
 
       <button onClick={handleLogout}>Logout</button>
 
-      <UserProfiles backendURL={BACKEND_URL} />
+      <UserProfiles />
 
     </div>
   );
