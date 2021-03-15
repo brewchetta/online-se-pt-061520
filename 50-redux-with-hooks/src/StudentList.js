@@ -1,40 +1,32 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { removeStudentAction } from './redux/actions'
 
-class StudentList extends React.Component {
+function StudentList(props) {
 
-  renderStudents = () => {
-    return this.props.students.map(student => (
-      <p onClick={() => this.props.removeStudent(student)}>Name: {student.name} | Age: {student.age} | Avg Grade: {student.grade}</p>
-    ))
+  const students = useSelector(state => state.students)
+  const dispatch = useDispatch()
+
+  const removeStudent = student => {
+    dispatch(removeStudentAction(student))
   }
 
-  render() {
-    return (
+  const renderStudents = students.map(student => (
+      <p onClick={() => removeStudent(student)}>Name: {student.name} | Age: {student.age} | Avg Grade: {student.grade}</p>
+  ))
 
-      <div id="student-list">
+  return (
 
-        <h3>Student Roster</h3>
+    <div id="student-list">
 
-        {this.renderStudents()}
+      <h3>Student Roster</h3>
 
-      </div>
+      {renderStudents}
 
-    )
-  }
+    </div>
+
+  )
 
 }
 
-const mapStateToProps = (state) => {
-  const { students } = state
-  return { students }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    removeStudent: studentToRemove => dispatch(removeStudentAction(studentToRemove))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(StudentList)
+export default StudentList

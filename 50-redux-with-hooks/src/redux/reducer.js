@@ -2,8 +2,8 @@ const defaultStore = {
   students: [
     {
       name: "Timmy",
-      age: 111,
-      grade: "A"
+      age: 12,
+      grade: 'A'
     }
   ]
 }
@@ -13,8 +13,6 @@ function reducer(state = defaultStore, action) {
     case "ADD_STUDENT":
       return {...state, students: [...state.students, action.payload]}
     case "REMOVE_STUDENT":
-    console.log(state.students)
-    console.log(action.payload)
       return {...state, students: state.students.filter(student => student !== action.payload)}
     default:
       return state
