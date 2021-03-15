@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addStudentAction } from './redux/actions'
 
 class StudentForm extends React.Component {
 
@@ -15,7 +16,7 @@ class StudentForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.handleSubmitStudent(this.state)
+    this.props.addStudent(this.state)
     this.setState({name: '', age: '', grade: 'A'})
   }
 
@@ -62,4 +63,10 @@ const mapStateToProps = (state) => {
   return {students}
 }
 
-export default connect(mapStateToProps)(StudentForm)
+const mapDispatchToProps = dispatch => {
+  return {
+    addStudent: (newStudent) => dispatch(addStudentAction(newStudent))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudentForm)

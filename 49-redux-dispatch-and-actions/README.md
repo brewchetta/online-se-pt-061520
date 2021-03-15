@@ -1,1 +1,1 @@
-# Intro to Redux
+# Redux: Dispatch and Actions
