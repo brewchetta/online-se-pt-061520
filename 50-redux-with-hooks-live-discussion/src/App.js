@@ -1,14 +1,14 @@
-import Form from './Form'
-import List from './List'
+import FunctionalForm from './FunctionalForm'
+import FunctionalList from './FunctionalList'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
 
-      <Form />
+      <FunctionalForm />
 
-      <List />
+      <FunctionalList />
 
     </div>
   );
