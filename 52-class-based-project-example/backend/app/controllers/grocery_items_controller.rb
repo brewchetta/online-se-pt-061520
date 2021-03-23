@@ -1,5 +1,6 @@
 class GroceryItemsController < ApplicationController
   before_action :find_user
+  before_action :authorized
 
   def index
     @gis = @user.grocery_items
