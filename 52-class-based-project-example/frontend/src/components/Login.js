@@ -1,5 +1,5 @@
 import React from 'react'
-import { loginRequest } from '../services/api'
+import { authRequest } from '../services/api'
 
 class Login extends React.Component {
 
@@ -12,7 +12,15 @@ class Login extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     const { username, password } = this.state
-    loginRequest({username, password}).then(console.log)
+
+    authRequest({username, password})
+    .then(res => {
+      if (res.error) {
+        this.setState({message: res.error})
+      } else {
+        localStorage.setItem('jwt', res.jwt)
+      }
+    })
   }
 
   handleChangeUsername = e => {
