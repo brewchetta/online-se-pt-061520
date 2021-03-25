@@ -1,5 +1,9 @@
 // packages
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// redux
+import { connect } from 'react-redux'
+import { getUser } from './redux/actions/userActions'
 // components
 import Home from "./components/Home"
 import Login from "./components/Login"
@@ -9,31 +13,43 @@ import './App.css';
 // services
 import { clearToken, getToken } from './services/local-storage'
 
-function App() {
+class App extends React.Component {
 
-  const handleLogout = () => {
+  handleLogout = () => {
     clearToken()
   }
 
-  return (
-    <Router>
+  componentDidMount() {
+    this.props.getUser()
+  }
+
+  render() {
+    return (
+      <Router>
       <div className="App">
 
-        <Switch>
+      <Switch>
 
-          <Route exact path="/" render={() => <Home />} />
+      <Route exact path="/" render={() => <Home />} />
 
-          <Route path="/login" render={routerProps => <Login {...routerProps} />} />
+      <Route path="/login" render={routerProps => <Login {...routerProps} />} />
 
-          <Route path="/profile" render={() => <Profile />} />
+      <Route path="/profile" render={() => <Profile />} />
 
-        </Switch>
+      </Switch>
 
-        {getToken() ? <button onClick={handleLogout}>Logout</button> : null}
+      {getToken() ? <button onClick={this.handleLogout}>Logout</button> : null}
 
       </div>
-    </Router>
-  );
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    getUser: () => dispatch(getUser())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App)
