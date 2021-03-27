@@ -3,7 +3,7 @@ export const getToken = () => {
 }
 
 export const setToken = token => {
-  localStorage.setItem('jwt')
+  localStorage.setItem('jwt', token)
 }
 
 export const clearToken = () => {
